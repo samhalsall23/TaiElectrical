@@ -1,32 +1,23 @@
 import { cn } from "@/lib/utils";
-import { VscTools } from "react-icons/vsc";
-import { LuCable } from "react-icons/lu";
-import { FaRegLightbulb } from "react-icons/fa";
-import { PiScrewdriverLight } from "react-icons/pi";
-import { IoHomeOutline } from "react-icons/io5";
 import LightBulbIcon from "./icons/LightBulbIcon";
 
-const classListItems = cn(["py-4 flex flex-col items-start px-8"]);
-const classHeading = cn([
-    "text-xl font-semibold text-charcoal",
-    "text-center",
-    "mb-2",
+const classListItems = cn([
+    "flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg transition-transform transform hover:scale-105 hover:shadow-xl",
 ]);
-const classText = cn(["text-charcoal", "mb-2"]);
+const classHeading = cn(["text-lg font-semibold text-gray-800 mb-2"]);
+const classText = cn(["text-gray-600"]);
 
 export function HomePageServices() {
     return (
-        <div className="bg-zinc-50">
-            <div className="container mx-auto py-10 px-20">
-                <h2 className="text-4xl font-bold text-center text-black mb-10">
+        <div className="bg-gray-50 py-8">
+            <div className="container mx-auto px-6 lg:px-20">
+                <h2 className="text-4xl font-semibold text-center text-gray-900 mb-12">
                     Our Services
                 </h2>
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className={classListItems}>
                         <LightBulbIcon icon="van" />
-                        <h3 className={classHeading}>
-                            24/7 hour emergency service
-                        </h3>
+                        <h3 className={classHeading}>24/7 Emergency Service</h3>
                         <p className={classText}>
                             We offer a wide range of residential electrical
                             services, including installations, repairs, and
@@ -36,7 +27,7 @@ export function HomePageServices() {
                     <div className={classListItems}>
                         <LightBulbIcon icon="tools" />
                         <h3 className={classHeading}>
-                            General electrical work
+                            General Electrical Work
                         </h3>
                         <p className={classText}>
                             Our team is equipped to handle all your commercial
@@ -54,7 +45,7 @@ export function HomePageServices() {
                     <div className={classListItems}>
                         <LightBulbIcon icon="cable" />
                         <h3 className={classHeading}>
-                            Data cabling and communications
+                            Data Cabling & Communications
                         </h3>
                         <p className={classText}>
                             We specialize in industrial electrical services,

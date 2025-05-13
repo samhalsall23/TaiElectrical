@@ -12,6 +12,15 @@ const config: Config = {
             fontFamily: {
                 sans: ["var(--font-inter)", "sans-serif"], // Ensure Inter is the default sans-serif font
             },
+            keyframes: {
+                flyIn: {
+                    "0%": { transform: "translateY(100%)", opacity: "0" },
+                    "100%": { transform: "translateY(0)", opacity: "1" },
+                },
+            },
+            animation: {
+                "fly-in": "flyIn 0.5s ease-out",
+            },
             colors: {
                 yellow: "var(--primary-yellow)",
                 charcoal: "var(--accent-charcoal-grey)",
