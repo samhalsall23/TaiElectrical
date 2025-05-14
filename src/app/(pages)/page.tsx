@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import HomePageServices from "@/components/HomePageServices";
 import BulbIcon from "@/components/icons/BulbIcon";
 import LightBulbIcon from "@/components/icons/LightBulbIcon";
+import { ProjectsSection } from "@/components/ProjectsSection";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { AiOutlineThunderbolt } from "react-icons/ai";
@@ -69,7 +70,8 @@ export default function Home() {
                 </div>
             </div>
             <HomePageServices />
-            <div className="bg-gray-50">
+
+            <div className="bg-gray-50 pt-12">
                 <div className="container mx-auto px-6 lg:px-20">
                     <div className="flex items-center text-center p-6 bg-white rounded-lg shadow-lg">
                         <div className="flex flex-col items-center w-3/5">
@@ -85,30 +87,24 @@ export default function Home() {
                                 electrical systems are safe, efficient, and up
                                 to code.
                             </p>
-                            <div className="flex gap-3">
-                                <div className="flex justify-between w-full gap-3 mt-10">
-                                    <div className="flex gap-3 items-center">
-                                        <LightBulbIcon icon="tools" />
-                                        <span className="text-gray-700 font-semibold mb-4">
-                                            Quality Workmanship
-                                        </span>
-                                    </div>
+                            <div className="flex justify-between items-center w-full mt-10 px-10">
+                                <div className="flex gap-3 items-center">
+                                    <LightBulbIcon icon="house" />
+                                    <span className="text-gray-700 font-semibold mb-4">
+                                        Domestic
+                                    </span>
                                 </div>
-                                <div className="flex justify-between w-full gap-3 mt-10">
-                                    <div className="flex gap-3 items-center">
-                                        <LightBulbIcon icon="tools" />
-                                        <span className="text-gray-700 font-semibold mb-4">
-                                            Quality Workmanship
-                                        </span>
-                                    </div>
+                                <div className="flex gap-3 items-center">
+                                    <LightBulbIcon icon="office" />
+                                    <span className="text-gray-700 font-semibold mb-4">
+                                        Commercial
+                                    </span>
                                 </div>
-                                <div className="flex justify-between w-full gap-3 mt-10">
-                                    <div className="flex gap-3 items-center">
-                                        <LightBulbIcon icon="tools" />
-                                        <span className="text-gray-700 font-semibold mb-4">
-                                            Quality Workmanship
-                                        </span>
-                                    </div>
+                                <div className="flex gap-3 items-center">
+                                    <LightBulbIcon icon="factory" />
+                                    <span className="text-gray-700 font-semibold mb-4">
+                                        Industrial
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -118,6 +114,8 @@ export default function Home() {
                     </div>
                 </div>
             </div>
+
+            <ProjectsSection />
 
             <div className="my-96"></div>
         </>

@@ -5,9 +5,21 @@ import { FaRegLightbulb } from "react-icons/fa";
 import { PiScrewdriverLight } from "react-icons/pi";
 import { IoHomeOutline } from "react-icons/io5";
 import { PiVan } from "react-icons/pi";
+import { BsHouse } from "react-icons/bs";
+import { PiFactory } from "react-icons/pi";
+import { HiOutlineOfficeBuilding } from "react-icons/hi";
 
 interface LightBulbIconProps {
-    icon?: "light-bulb" | "home" | "tools" | "cable" | "screwdriver" | "van";
+    icon?:
+        | "light-bulb"
+        | "home"
+        | "tools"
+        | "cable"
+        | "screwdriver"
+        | "van"
+        | "house"
+        | "factory"
+        | "office";
 }
 
 const LightBulbIcon: React.FC<LightBulbIconProps> = ({
@@ -27,6 +39,13 @@ const LightBulbIcon: React.FC<LightBulbIconProps> = ({
                 <PiScrewdriverLight className="text-black" size={24} />
             )}
             {icon === "van" && <PiVan className="text-black" size={24} />}
+            {icon === "house" && <BsHouse className="text-black" size={24} />}
+            {icon === "factory" && (
+                <PiFactory className="text-black" size={24} />
+            )}
+            {icon === "office" && (
+                <HiOutlineOfficeBuilding className="text-black" size={24} />
+            )}
         </div>
     );
 };
