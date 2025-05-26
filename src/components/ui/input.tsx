@@ -1,10 +1,16 @@
 import * as React from "react";
 import { FaRegUser } from "react-icons/fa";
+import { MdOutlineMail } from "react-icons/md";
+import { FiPhone } from "react-icons/fi";
 
 import { cn } from "@/lib/utils";
 
-const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
-    ({ className, type, ...props }, ref) => {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    icon?: "name" | "email" | "phone";
+}
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+    ({ className, type, icon, ...props }, ref) => {
         return (
             <div className="relative flex w-full bg-transparent">
                 <input
@@ -18,7 +24,9 @@ const Input = React.forwardRef<HTMLInputElement, React.ComponentProps<"input">>(
                 />
 
                 <div className="absolute right-2 bottom-2 text-black">
-                    <FaRegUser size={20} />
+                    {icon === "name" && <FaRegUser size={20} />}
+                    {icon === "email" && <MdOutlineMail size={20} />}
+                    {icon === "phone" && <FiPhone size={20} />}
                 </div>
             </div>
         );

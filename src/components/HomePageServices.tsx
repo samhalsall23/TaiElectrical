@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import LightBulbIcon from "./icons/LightBulbIcon";
+import IconSquare from "./icons/IconSquare";
 
 const classListItems = cn([
     "flex flex-col items-start text-left p-6 transition-transform transform hover:scale-105 hover:shadow-xl",
@@ -36,7 +36,7 @@ export function HomePageServices() {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div className={classListItems}>
-                            <LightBulbIcon icon="van" />
+                            <IconSquare icon="van" />
                             <h3 className={classHeading}>
                                 24/7 Emergency Service
                             </h3>
@@ -47,7 +47,7 @@ export function HomePageServices() {
                             </p>
                         </div>
                         <div className={classListItems}>
-                            <LightBulbIcon icon="tools" />
+                            <IconSquare icon="tools" />
                             <h3 className={classHeading}>
                                 General Electrical Work
                             </h3>
@@ -58,7 +58,7 @@ export function HomePageServices() {
                             </p>
                         </div>
                         <div className={classListItems}>
-                            <LightBulbIcon icon="light-bulb" />
+                            <IconSquare icon="light-bulb" />
                             <h3 className={classHeading}>Lighting</h3>
                             <p className={classText}>
                                 We specialize in industrial electrical services,
@@ -67,7 +67,7 @@ export function HomePageServices() {
                             </p>
                         </div>
                         <div className={classListItems}>
-                            <LightBulbIcon icon="cable" />
+                            <IconSquare icon="cable" />
                             <h3 className={classHeading}>
                                 Data Cabling & Communications
                             </h3>
@@ -78,7 +78,7 @@ export function HomePageServices() {
                             </p>
                         </div>
                         <div className={classListItems}>
-                            <LightBulbIcon icon="screwdriver" />
+                            <IconSquare icon="screwdriver" />
                             <h3 className={classHeading}>
                                 Appliance Installations
                             </h3>
@@ -89,7 +89,7 @@ export function HomePageServices() {
                             </p>
                         </div>
                         <div className={classListItems}>
-                            <LightBulbIcon icon="home" />
+                            <IconSquare icon="home" />
                             <h3 className={classHeading}>Renovations</h3>
                             <p className={classText}>
                                 We specialize in industrial electrical services,

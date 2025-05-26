@@ -1,4 +1,5 @@
-import React from "react";
+import { FC } from "react";
+
 import { VscTools } from "react-icons/vsc";
 import { LuCable } from "react-icons/lu";
 import { FaRegLightbulb } from "react-icons/fa";
@@ -9,7 +10,7 @@ import { BsHouse } from "react-icons/bs";
 import { PiFactory } from "react-icons/pi";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
 
-interface LightBulbIconProps {
+interface IconSquareProps {
     icon?:
         | "light-bulb"
         | "home"
@@ -22,9 +23,7 @@ interface LightBulbIconProps {
         | "office";
 }
 
-const LightBulbIcon: React.FC<LightBulbIconProps> = ({
-    icon = "light-bulb",
-}) => {
+const IconSquare: FC<IconSquareProps> = ({ icon = "light-bulb" }) => {
     return (
         <div className="bg-amber-100 rounded-md p-2 flex items-center justify-center border-4 border-amber-200 w-12 h-12 mb-4">
             {icon === "light-bulb" && (
@@ -50,4 +49,4 @@ const LightBulbIcon: React.FC<LightBulbIconProps> = ({
     );
 };
 
-export default LightBulbIcon;
+export default IconSquare;

@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { FaInstagram, FaPhone } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FiPhone } from "react-icons/fi";
 
 const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -25,7 +26,7 @@ const Navbar: React.FC = () => {
 
     return (
         <nav
-            className={`text-black h-24 sticky top-0 bg-white z-50 ${
+            className={`text-black h-20 sticky top-0 bg-white z-50 ${
                 isScrolled ? "border-b border-gray-300 shadow-md" : ""
             }`}>
             <div className="container mx-auto flex justify-between items-center">
@@ -33,8 +34,8 @@ const Navbar: React.FC = () => {
                     <Image
                         src={"/assets/tai-electrical-logo.jpg"}
                         alt="Tai Electrical Logo"
-                        width={150}
-                        height={150}
+                        width={130}
+                        height={130}
                     />
                 </Link>
                 <div className="flex items-between space-x-4">
@@ -48,8 +49,8 @@ const Navbar: React.FC = () => {
 
                     <Link
                         href="tel:0444444444"
-                        className="bg-yellow h-10 px-3 flex items-center justify-between rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-                        <FaPhone className="text-black self-center" size={20} />
+                        className="bg-yellow h-10 px-3 flex items-center justify-between rounded-full shadow-md hover:shadow-2xl transition-all duration-300">
+                        <FiPhone className="text-black self-center" size={20} />
                         <span className="text-black text-lg px-3 py-2">
                             0444 444 444
                         </span>

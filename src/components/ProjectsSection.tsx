@@ -1,6 +1,7 @@
 import {
     Carousel,
     CarouselContent,
+    CarouselDots,
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
@@ -9,7 +10,7 @@ import Image from "next/image";
 
 export function ProjectsSection() {
     return (
-        <div className="bg-gray-50 pt-10 flex justify-center min-h-screen">
+        <div className="bg-gray-50 pt-12 flex justify-center min-h-screen">
             <div className="text-center w-3/5">
                 <h2 className="text-gray-900 text-3xl font-extrabold mb-8">
                     Our Projects
@@ -121,6 +122,7 @@ export function ProjectsSection() {
                         </CarouselContent>
                         <CarouselPrevious />
                         <CarouselNext />
+                        <CarouselDots className="mt-6" />
                     </Carousel>
                 </div>
             </div>

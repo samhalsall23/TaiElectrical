@@ -1,83 +1,44 @@
 "use client";
 
-import { ContactForm } from "@/components/ContactForm";
+import { useRef } from "react";
+
+import { GetStarted } from "@/components/GetStarted";
+import { HeroSection } from "@/components/HeroSection";
 import HomePageServices from "@/components/HomePageServices";
 import BulbIcon from "@/components/icons/BulbIcon";
-import LightBulbIcon from "@/components/icons/LightBulbIcon";
+import IconSquare from "@/components/icons/IconSquare";
 import { ProjectsSection } from "@/components/ProjectsSection";
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
-import { AiOutlineThunderbolt } from "react-icons/ai";
-import { Typewriter } from "react-simple-typewriter";
+import { ReviewsSection } from "@/components/ReviewsSection";
 
 export default function Home() {
+    const nameRef = useRef<HTMLInputElement>(null);
+
+    const onClickContactUs = () => {
+        const yOffset = -180; // navbar height in px
+        const el = nameRef.current;
+        if (el) {
+            const y =
+                el.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: y, behavior: "smooth" });
+            setTimeout(() => {
+                el.focus();
+            }, 1000);
+        }
+    };
+
     return (
         <>
-            <div className="absolute rotate-12 top-48 left-80 w-screen h-screen text-gray-300 ">
-                <AiOutlineThunderbolt size={550} className="text-zinc-100" />
-            </div>
-            <div>
-                <div className="flex relative -mt-20">
-                    <div className="ms-10 w-1/2 flex items-center justify-center relative z-10">
-                        <h2 className="text-6xl text-black font-black underline-offset-4 relative px-6 py-4 leading-relaxed">
-                            <span>
-                                Expert Solutions For Your
-                                <Typewriter
-                                    words={[
-                                        " Electrical Problems",
-                                        " Electrical Needs",
-                                        " Electrical Services",
-                                        " Electrical Projects",
-                                        " Electrical Solutions",
-                                    ]}
-                                    loop
-                                    cursor
-                                    cursorStyle="|"
-                                    typeSpeed={50}
-                                    deleteSpeed={50}
-                                    delaySpeed={2000}
-                                />
-                            </span>
-                        </h2>
-                    </div>
+            <HeroSection nameRef={nameRef} />
 
-                    <div className="relative w-1/2 h-[500px]">
-                        <Image
-                            className="object-cover"
-                            src={"/assets/warm-hero-image.png"}
-                            alt="About Us"
-                            fill
-                        />
-                    </div>
-                </div>
-                <div className="flex">
-                    <div className="relative ms-10 w-3/5 -mt-20 z-20">
-                        <ContactForm />
-                    </div>
-                    <div className="w-2/5 p-10 flex flex-col justify-center self-center relative z-10 animate-fly-in">
-                        <p className="text-xl text-gray-700 leading-relaxed mb-1">
-                            Based in Melbourne’s south east, we provide fast,
-                            professional electrical services — from 24/7
-                            emergency callouts to lighting, data cabling,
-                            renovations, and more.
-                        </p>
-                        {/* <Button className="bg-yellow text-black font-bold py-2 px-4 rounded-md hover:bg-yellow-600 transition mt-5 w-fit">
-                            <span className="text-lg font-semibold">
-                                Schedule a Consultation
-                            </span>
-                        </Button> */}
-                    </div>
-                </div>
-            </div>
             <HomePageServices />
 
-            <div className="bg-gray-50 pt-12">
+            <div className="bg-gray-50 ">
                 <div className="container mx-auto px-6 lg:px-20">
                     <div className="flex items-center text-center p-6 bg-white rounded-lg shadow-lg">
                         <div className="flex flex-col items-center w-3/5">
                             <h3 className="text-2xl font-semibold text-gray-800 mb-5">
                                 One Stop Solution For Your Electrical Repairs,
-                                Installisation and 34/7 Maintenance
+                                Installisation and 24/7 Maintenance
                             </h3>
                             <p className="text-gray-600">
                                 We are a team of experienced electricians
@@ -89,19 +50,19 @@ export default function Home() {
                             </p>
                             <div className="flex justify-between items-center w-full mt-10 px-10">
                                 <div className="flex gap-3 items-center">
-                                    <LightBulbIcon icon="house" />
+                                    <IconSquare icon="house" />
                                     <span className="text-gray-700 font-semibold mb-4">
                                         Domestic
                                     </span>
                                 </div>
                                 <div className="flex gap-3 items-center">
-                                    <LightBulbIcon icon="office" />
+                                    <IconSquare icon="office" />
                                     <span className="text-gray-700 font-semibold mb-4">
                                         Commercial
                                     </span>
                                 </div>
                                 <div className="flex gap-3 items-center">
-                                    <LightBulbIcon icon="factory" />
+                                    <IconSquare icon="factory" />
                                     <span className="text-gray-700 font-semibold mb-4">
                                         Industrial
                                     </span>
@@ -117,7 +78,11 @@ export default function Home() {
 
             <ProjectsSection />
 
-            <div className="my-96"></div>
+            <ReviewsSection />
+
+            <div className="py-12 bg-gray-50"></div>
+
+            <GetStarted onClickContactUs={onClickContactUs} />
         </>
     );
 
