@@ -35,12 +35,12 @@ export function ReviewsSection() {
                                         Customer 1
                                     </h3>
                                     <p className="text-gray-700 mb-8">
-                                        "I had a great experience with this
+                                        I had a great experience with this
                                         company. They were professional and
                                         efficient. The team was friendly and
                                         knowledgeable. I would highly recommend
                                         them to anyone looking for quality
-                                        electrical work."
+                                        electrical work.
                                     </p>
                                 </div>
                             </CarouselItem>
@@ -54,12 +54,12 @@ export function ReviewsSection() {
                                         Customer 1
                                     </h3>
                                     <p className="text-gray-700 mb-8">
-                                        "I had a great experience with this
+                                        I had a great experience with this
                                         company. They were professional and
                                         efficient. The team was friendly and
                                         knowledgeable. I would highly recommend
                                         them to anyone looking for quality
-                                        electrical work."
+                                        electrical work.
                                     </p>
                                 </div>
                             </CarouselItem>
@@ -73,12 +73,12 @@ export function ReviewsSection() {
                                         Customer 1
                                     </h3>
                                     <p className="text-gray-700 mb-8">
-                                        "I had a great experience with this
+                                        I had a great experience with this
                                         company. They were professional and
                                         efficient. The team was friendly and
                                         knowledgeable. I would highly recommend
                                         them to anyone looking for quality
-                                        electrical work."
+                                        electrical work.
                                     </p>
                                 </div>
                             </CarouselItem>
