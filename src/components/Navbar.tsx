@@ -30,14 +30,18 @@ const Navbar: React.FC = () => {
                 isScrolled ? "border-b border-gray-300 shadow-md" : ""
             }`}>
             <div className="container mx-auto flex justify-between items-center">
-                <Link href="/" className="pt-1 flex items-center">
+                <button
+                    onClick={() =>
+                        window.scrollTo({ top: 0, behavior: "smooth" })
+                    }
+                    className="pt-1 flex items-center">
                     <Image
                         src={"/assets/tai-electrical-logo.jpg"}
                         alt="Tai Electrical Logo"
                         width={130}
                         height={130}
                     />
-                </Link>
+                </button>
                 <div className="flex items-between space-x-4">
                     <Link
                         href="https://www.instagram.com"

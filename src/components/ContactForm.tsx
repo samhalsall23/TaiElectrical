@@ -11,7 +11,9 @@ export function ContactForm({
     return (
         <div className="flex bg-yellow flex-col p-8 rounded-md">
             {" "}
-            <h2 className="text-4xl text-black font-black">Get A Free Quote</h2>
+            <h2 className="text-3xl md:text-4xl text-black font-black">
+                Get A Free Quote
+            </h2>
             <form>
                 <div className="flex flex-col lg:flex-row gap-6 w-full">
                     <div className="flex flex-col gap-4 w-full lg:w-1/2">
@@ -49,7 +51,7 @@ export function ContactForm({
                     </div>
                     <div className="flex w-full lg:w-1/2">
                         <TextArea
-                            className="h-full w-full"
+                            className="w-full h-24 md:h-full"
                             placeholder="Your Message"></TextArea>
                     </div>
                 </div>

@@ -5,10 +5,9 @@ import { useRef } from "react";
 import { GetStarted } from "@/components/GetStarted";
 import { HeroSection } from "@/components/HeroSection";
 import HomePageServices from "@/components/HomePageServices";
-import BulbIcon from "@/components/icons/BulbIcon";
-import IconSquare from "@/components/icons/IconSquare";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { ReviewsSection } from "@/components/ReviewsSection";
+import { AboutUs } from "@/components/AboutUs";
 
 export default function Home() {
     const nameRef = useRef<HTMLInputElement>(null);
@@ -32,49 +31,7 @@ export default function Home() {
 
             <HomePageServices />
 
-            <div className="bg-gray-50 ">
-                <div className="container mx-auto px-6 lg:px-20">
-                    <div className="flex items-center text-center p-6 bg-white rounded-lg shadow-lg">
-                        <div className="flex flex-col items-center w-3/5">
-                            <h3 className="text-2xl font-semibold text-gray-800 mb-5">
-                                One Stop Solution For Your Electrical Repairs,
-                                Installisation and 24/7 Maintenance
-                            </h3>
-                            <p className="text-gray-600">
-                                We are a team of experienced electricians
-                                dedicated to providing top-notch electrical
-                                services for residential and commercial
-                                properties. Our mission is to ensure your
-                                electrical systems are safe, efficient, and up
-                                to code.
-                            </p>
-                            <div className="flex justify-between items-center w-full mt-10 px-10">
-                                <div className="flex gap-3 items-center">
-                                    <IconSquare icon="house" />
-                                    <span className="text-gray-700 font-semibold mb-4">
-                                        Domestic
-                                    </span>
-                                </div>
-                                <div className="flex gap-3 items-center">
-                                    <IconSquare icon="office" />
-                                    <span className="text-gray-700 font-semibold mb-4">
-                                        Commercial
-                                    </span>
-                                </div>
-                                <div className="flex gap-3 items-center">
-                                    <IconSquare icon="factory" />
-                                    <span className="text-gray-700 font-semibold mb-4">
-                                        Industrial
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="w-2/5 flex justify-end -me-44">
-                            <BulbIcon width="300px" height="300px" />
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <AboutUs />
 
             <ProjectsSection />
 
