@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-    overflow-x: hidden;
-}
-
 :root {
     /* Primary Colors */
     --primary-black: #000000;
