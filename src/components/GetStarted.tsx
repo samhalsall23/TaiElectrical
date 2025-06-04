@@ -1,11 +1,12 @@
+"use client";
+
 import { Button } from "./ui/button";
 import { FaArrowRight } from "react-icons/fa6";
 
-export function GetStarted({
-    onClickContactUs,
-}: {
-    onClickContactUs: () => void;
-}) {
+export function GetStarted() {
+    const onClickContactUs = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
     return (
         <section className="relative py-20 px-4 flex flex-col items-center justify-center overflow-hidden bg-slate-100 ">
             <div

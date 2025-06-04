@@ -1,3 +1,5 @@
+"use client";
+
 import { IoChatbubblesOutline } from "react-icons/io5";
 import { LuQuote } from "react-icons/lu";
 
@@ -8,7 +10,6 @@ import {
     CarouselItem,
     CarouselNext,
 } from "./ui/carousel";
-import { ReactGoogleReviews } from "react-google-reviews";
 
 export function ReviewsSection() {
     return (

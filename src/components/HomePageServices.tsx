@@ -103,5 +103,3 @@ export function HomePageServices() {
         </>
     );
 }
-
-export default HomePageServices;

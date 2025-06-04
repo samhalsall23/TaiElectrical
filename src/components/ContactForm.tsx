@@ -1,6 +1,6 @@
 "use client";
 
-import { RefObject, useState } from "react";
+import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -21,11 +21,7 @@ const contactFormSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
-export function ContactForm({
-    nameRef,
-}: {
-    nameRef: RefObject<HTMLInputElement>;
-}) {
+export function ContactForm() {
     const [status, setStatus] = useState<
         "idle" | "submitting" | "success" | "error"
     >("idle");
