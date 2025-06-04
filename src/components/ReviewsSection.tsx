@@ -8,6 +8,7 @@ import {
     CarouselItem,
     CarouselNext,
 } from "./ui/carousel";
+import { ReactGoogleReviews } from "react-google-reviews";
 
 export function ReviewsSection() {
     return (
@@ -23,6 +24,12 @@ export function ReviewsSection() {
                     </h2>
                 </div>
                 <div className="w-full md:w-2/3 mx-0 md:mx-10 relative me-4 pr-16 md:pr-8">
+                    {/* <ReactGoogleReviews
+                        layout="carousel"
+                        featurableId={featurableWidgetId}
+                    /> */}
+
+                    {/* Non Google Reviews */}
                     <Carousel>
                         <CarouselContent className="w-full">
                             <CarouselItem className="rounded-lg relative shadow-md bg-yellow flex w-full">

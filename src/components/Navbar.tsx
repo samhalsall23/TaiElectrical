@@ -47,13 +47,13 @@ const Navbar: React.FC = () => {
                         href="https://www.instagram.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 flex items-center justify-center border-2 border-yellow rounded-full hover:bg-yellow hover:text-white shadow-md hover:shadow-lg transition-all duration-300">
+                        className="w-10 h-10 flex items-center justify-center border-2 border-yellow rounded-full hover:bg-yellow hover:text-white shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
                         <FaInstagram className="text-black" size={20} />
                     </Link>
 
                     <Link
                         href="tel:0444444444"
-                        className="bg-yellow h-10 px-3 flex items-center justify-between rounded-full shadow-md hover:shadow-2xl transition-all duration-300">
+                        className="bg-yellow h-10 px-3 flex items-center justify-between rounded-full shadow-md hover:shadow-2xl transition-all duration-300 hover:scale-105">
                         <FiPhone className="text-black self-center" size={20} />
                         <span className="text-black text-lg px-3 py-2">
                             0444 444 444
