@@ -11,16 +11,16 @@ import { PiFactory } from "react-icons/pi";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
 
 interface IconSquareProps {
-    icon?:
-        | "light-bulb"
-        | "home"
-        | "tools"
-        | "cable"
-        | "screwdriver"
-        | "van"
-        | "house"
-        | "factory"
-        | "office";
+    icon?: string;
+    // | "light-bulb"
+    // | "home"
+    // | "tools"
+    // | "cable"
+    // | "screwdriver"
+    // | "van"
+    // | "house"
+    // | "factory"
+    // | "office";
 }
 
 const IconSquare: FC<IconSquareProps> = ({ icon = "light-bulb" }) => {

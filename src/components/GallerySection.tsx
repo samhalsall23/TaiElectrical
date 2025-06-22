@@ -33,7 +33,7 @@ export function GallerySection() {
                                             width={4032}
                                             height={3024}
                                             className="w-full h-auto object-cover"
-                                            onClick={() => setModalOpen(true)}
+                                            // onClick={() => setModalOpen(true)}
                                         />
                                     </div>
                                 </CarouselItem>

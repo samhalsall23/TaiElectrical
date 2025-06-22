@@ -44,7 +44,6 @@ export function HeroSection() {
                                             cursorStyle="|"
                                             typeSpeed={50}
                                             deleteSpeed={50}
-                                            s
                                             delaySpeed={3000}
                                         />
                                     )}
