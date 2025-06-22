@@ -6,3 +6,5 @@ export * from "./HomePageServices";
 export * from "./Footer";
 export * from "./ReviewsSection";
 export * from "./ProjectsSection";
+export * from "./GallerySection";
+export * from "./LoadingOverlay";
