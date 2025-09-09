@@ -26,7 +26,7 @@ const Navbar: React.FC = () => {
 
     return (
         <nav
-            className={`text-black h-20 sticky top-0 bg-gray-50 z-50 ${
+            className={`text-black h-20 sticky top-0 bg-gray-50 flex justify-center z-50 ${
                 isScrolled ? "border-b border-gray-300 shadow-md" : ""
             }`}>
             <div className="container mx-auto flex justify-between items-center">
@@ -38,10 +38,32 @@ const Navbar: React.FC = () => {
                     <Image
                         src={"/assets/tai-electrical-logo.jpg"}
                         alt="Tai Electrical Logo"
-                        width={130}
-                        height={130}
+                        width={100}
+                        height={100}
                     />
                 </button>
+                <div className="text-2xl font-medium space-x-8 hidden md:flex">
+                    <Link
+                        href="#about"
+                        className="relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">
+                        About
+                    </Link>
+                    <Link
+                        href="#services"
+                        className="relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">
+                        Services
+                    </Link>
+                    <Link
+                        href="#projects"
+                        className="relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">
+                        Projects
+                    </Link>
+                    <Link
+                        href="#contact"
+                        className="relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">
+                        Contact
+                    </Link>
+                </div>
                 <div className="flex items-between space-x-4">
                     <Link
                         href="https://www.instagram.com"

@@ -38,7 +38,7 @@ const config: Config = {
                     foreground: "rgb(var(--popover-foreground))",
                 },
                 primary: {
-                    DEFAULT: "rgb(var(--primary))",
+                    DEFAULT: "var(--primary-yellow)",
                     foreground: "rgb(var(--primary-foreground))",
                 },
                 secondary: {

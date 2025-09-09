@@ -16,7 +16,7 @@ export function HeroSection() {
     }, []);
 
     return (
-        <section className="relative overflow-x-clip">
+        <section className="relative overflow-x-clip min-h-screen 2xl:min-h-0">
             <div className="absolute rotate-12 top-32 left-1/2 -translate-x-1/2 md:left-80 md:translate-x-0 w-[400px] h-[400px] md:w-screen md:h-screen text-gray-300 pointer-events-none z-0">
                 <AiOutlineThunderbolt
                     size={300}
@@ -62,7 +62,7 @@ export function HeroSection() {
                     </InViewSection>
                 </div>
                 <div className="flex flex-col md:flex-row">
-                    <div className="relative px-4 md:ms-10 w-full md:w-3/5 -mt-10 md:-mt-20 z-20">
+                    <div className="relative px-4 md:ms-10 w-full md:w-3/5 -mt-4 md:-mt-6 z-20">
                         <InViewSection>
                             <ContactForm />
                         </InViewSection>

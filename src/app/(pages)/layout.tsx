@@ -4,6 +4,7 @@ import "../globals.css";
 
 import Navbar from "../../components/Navbar";
 import { Footer } from "@/components/Footer";
+import NewNavbar from "@/components/NewNavbar";
 
 // Load the Inter font
 const inter = Inter({
@@ -27,7 +28,7 @@ export default function RootLayout({
             <body
                 className={`${inter.variable} font-sans antialiased overflow-x-hidden`}>
                 {" "}
-                <Navbar />
+                <NewNavbar />
                 {children}
                 <Footer />
             </body>
