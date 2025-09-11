@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { InViewSection } from "./InViewSection";
 import { Button } from "./ui/button";
+import { SlashHeader } from "./SlashHeader";
 
 export function NewHeroSection() {
     return (
@@ -13,14 +14,7 @@ export function NewHeroSection() {
                 <div className="space-y-6 sm:space-y-8 lg:space-y-12 text-center lg:text-left">
                     {/* Small header */}
                     <InViewSection className="delay-100">
-                        <div className="flex items-center justify-center lg:justify-start gap-2">
-                            <h3 className="text-lg sm:text-xl lg:text-2xl text-yellow font-black">
-                                //
-                            </h3>
-                            <h3 className="ps-2 text-lg sm:text-xl lg:text-2xl font-black text-zinc-800 tracking-wide">
-                                LET'S GET TO WORK
-                            </h3>
-                        </div>
+                        <SlashHeader text="LET'S GET TO WORK" />
                     </InViewSection>
 
                     {/* Main headline */}
@@ -37,7 +31,7 @@ export function NewHeroSection() {
 
                     {/* Subtext */}
                     <InViewSection className="delay-500">
-                        <p className="text-base sm:text-lg lg:text-xl text-zinc-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        <p className="p-heading-text">
                             Providing top-notch electrical solutions for
                             residential and commercial needs. Your trusted
                             partner for safe and reliable electrical services.

@@ -9,8 +9,10 @@ import {
     AboutUs,
     LoadingOverlay,
 } from "@/components";
+import { AboutUsNew } from "@/components/AboutUsNew";
 import { BelowHero } from "@/components/BelowHero";
 import { NewHeroSection } from "@/components/NewHeroSection";
+import { OurProcess } from "@/components/OurProcess";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -25,8 +27,12 @@ export default function Home() {
 
             {visible && (
                 <>
+                    {/*New Version*/}
                     <NewHeroSection />
                     <BelowHero />
+                    <AboutUsNew />
+                    <OurProcess />
+
                     {/* <HeroSection /> */}
                     <HomePageServices />
                     <AboutUs />

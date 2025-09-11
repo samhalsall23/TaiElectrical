@@ -9,23 +9,37 @@ import { PiVan } from "react-icons/pi";
 import { BsHouse } from "react-icons/bs";
 import { PiFactory } from "react-icons/pi";
 import { HiOutlineOfficeBuilding } from "react-icons/hi";
+import { FaCheck } from "react-icons/fa6";
+import { cn } from "@/lib/utils";
 
 interface IconSquareProps {
-    icon?: string;
-    // | "light-bulb"
-    // | "home"
-    // | "tools"
-    // | "cable"
-    // | "screwdriver"
-    // | "van"
-    // | "house"
-    // | "factory"
-    // | "office";
+    icon?:
+        | "light-bulb"
+        | "home"
+        | "tools"
+        | "cable"
+        | "screwdriver"
+        | "van"
+        | "house"
+        | "factory"
+        | "office"
+        | "check";
+    size?: "md" | "lg";
 }
 
-const IconSquare: FC<IconSquareProps> = ({ icon = "light-bulb" }) => {
+const IconSquare: FC<IconSquareProps> = ({
+    icon = "light-bulb",
+    size = "lg",
+}) => {
+    const isSize = (s: "md" | "lg") => s === size;
+
+    const divClass = cn([
+        "bg-amber-100 rounded-md flex items-center justify-center",
+        isSize("md") && "w-8 h-8 p-2.5",
+        isSize("lg") && "w-12 h-12 p-2 mb-4 border-4 border-amber-200 ",
+    ]);
     return (
-        <div className="bg-amber-100 rounded-md p-2 flex items-center justify-center border-4 border-amber-200 w-12 h-12 mb-4">
+        <div className={divClass}>
             {icon === "light-bulb" && (
                 <FaRegLightbulb className="text-black" size={24} />
             )}
@@ -44,6 +58,9 @@ const IconSquare: FC<IconSquareProps> = ({ icon = "light-bulb" }) => {
             )}
             {icon === "office" && (
                 <HiOutlineOfficeBuilding className="text-black" size={24} />
+            )}
+            {icon === "check" && (
+                <FaCheck className="text-amber-500 " size={24} />
             )}
         </div>
     );
