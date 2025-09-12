@@ -33,6 +33,9 @@ const Navbar: React.FC = () => {
         setIsMobileMenuOpen(false);
     };
 
+    const linkClass =
+        "relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full";
+
     return (
         <>
             <nav
@@ -55,25 +58,17 @@ const Navbar: React.FC = () => {
                     </button>
 
                     {/* Desktop Navigation */}
-                    <div className="text-xl lg:text-2xl font-medium space-x-6 lg:space-x-8 hidden md:flex">
-                        <Link
-                            href="#about"
-                            className="relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">
+                    <div className="text-lg lg:text-xl 2xl:text-2xl font-medium space-x-6 lg:space-x-12 hidden md:flex">
+                        <Link href="#about" className={linkClass}>
                             About
                         </Link>
-                        <Link
-                            href="#services"
-                            className="relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">
+                        <Link href="#services" className={linkClass}>
                             Services
                         </Link>
-                        <Link
-                            href="#projects"
-                            className="relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">
+                        <Link href="#projects" className={linkClass}>
                             Projects
                         </Link>
-                        <Link
-                            href="#contact"
-                            className="relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full">
+                        <Link href="#contact" className={linkClass}>
                             Contact
                         </Link>
                     </div>

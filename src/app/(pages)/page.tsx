@@ -13,6 +13,7 @@ import { AboutUsNew } from "@/components/AboutUsNew";
 import { BelowHero } from "@/components/BelowHero";
 import { NewHeroSection } from "@/components/NewHeroSection";
 import { OurProcess } from "@/components/OurProcess";
+import { OurServicesNew } from "@/components/OurServicesNew";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -32,6 +33,7 @@ export default function Home() {
                     <BelowHero />
                     <AboutUsNew />
                     <OurProcess />
+                    <OurServicesNew />
 
                     {/* <HeroSection /> */}
                     <HomePageServices />

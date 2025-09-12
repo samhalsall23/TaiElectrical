@@ -12,18 +12,20 @@ import { HiOutlineOfficeBuilding } from "react-icons/hi";
 import { FaCheck } from "react-icons/fa6";
 import { cn } from "@/lib/utils";
 
+export type IconSquareIconType =
+    | "light-bulb"
+    | "home"
+    | "tools"
+    | "cable"
+    | "screwdriver"
+    | "van"
+    | "house"
+    | "factory"
+    | "office"
+    | "check";
+
 interface IconSquareProps {
-    icon?:
-        | "light-bulb"
-        | "home"
-        | "tools"
-        | "cable"
-        | "screwdriver"
-        | "van"
-        | "house"
-        | "factory"
-        | "office"
-        | "check";
+    icon?: IconSquareIconType;
     size?: "md" | "lg";
 }
 
