@@ -8,7 +8,7 @@ import { SlashHeader } from "./SlashHeader";
 
 export function NewHeroSection() {
     return (
-        <section className="relative overflow-x-clip min-h-[calc(100vh-5rem)] flex flex-col lg:flex-row items-center bg-gradient-to-br from-gray-50 to-white">
+        <section className="relative overflow-x-clip min-h-[calc(100vh-5rem)] flex flex-col lg:flex-row items-center bg-gradient-to-b from-gray-50 to-white">
             {/* Left Side - Info */}
             <div className="flex flex-col justify-center w-full lg:w-7/12 xl:w-5/12 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-10 lg:py-0 order-2 lg:order-1">
                 <div className="space-y-6 sm:space-y-8 lg:space-y-12 text-center lg:text-left">
@@ -19,7 +19,7 @@ export function NewHeroSection() {
 
                     {/* Main headline */}
                     <InViewSection className="delay-300">
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-medium leading-tight text-zinc-800">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-7xl font-medium leading-tight text-zinc-800">
                             <div className="flex flex-col justify-start">
                                 <span className="block">
                                     Affordable solutions for your electrical

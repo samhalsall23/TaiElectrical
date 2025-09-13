@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import IconSquare from "./icons/IconSquare";
+import IconSquare, { IconSquareIconType } from "./icons/IconSquare";
 import { InViewSection } from "./InViewSection";
 
 const classListItems = cn([
@@ -63,7 +63,9 @@ export function HomePageServices() {
                             key={index}
                             className={`delay-[${(index + 1) * 100}ms]`}>
                             <div className={classListItems}>
-                                <IconSquare icon={item.icon} />
+                                <IconSquare
+                                    icon={item.icon as IconSquareIconType}
+                                />
                                 <h3 className={classHeading}>{item.title}</h3>
                                 <p className={classText}>{item.text}</p>
                             </div>

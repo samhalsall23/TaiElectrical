@@ -2,17 +2,14 @@
 
 import {
     GetStarted,
-    HeroSection,
-    HomePageServices,
     GallerySection,
     ReviewsSection,
-    AboutUs,
     LoadingOverlay,
 } from "@/components";
 import { AboutUsNew } from "@/components/AboutUsNew";
 import { BelowHero } from "@/components/BelowHero";
 import { NewHeroSection } from "@/components/NewHeroSection";
-import { OurProcess } from "@/components/OurProcess";
+import { OurProcessTest } from "@/components/OurProcessTest";
 import { OurServicesNew } from "@/components/OurServicesNew";
 import { useEffect, useState } from "react";
 
@@ -32,12 +29,13 @@ export default function Home() {
                     <NewHeroSection />
                     <BelowHero />
                     <AboutUsNew />
-                    <OurProcess />
+                    <OurProcessTest />
+                    {/* <OurProcess /> */}
                     <OurServicesNew />
 
                     {/* <HeroSection /> */}
-                    <HomePageServices />
-                    <AboutUs />
+                    {/* <HomePageServices /> */}
+                    {/* <AboutUs /> */}
                     {/* <ProjectsSection /> */}
                     <div className="py-12 bg-gray-50"></div>
                     <ReviewsSection />

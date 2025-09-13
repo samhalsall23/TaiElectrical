@@ -48,7 +48,7 @@ export function AboutUsNew() {
                     </div>
                     <div className="w-full lg:w-1/2">
                         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                            <div className="aspect-[4/3] relative">
+                            <InViewSection className="aspect-[4/3] relative">
                                 <Image
                                     src={"/assets/male-electrician-working.jpg"}
                                     alt="Professional Electrician"
@@ -56,7 +56,7 @@ export function AboutUsNew() {
                                     className="object-cover"
                                     priority
                                 />
-                            </div>
+                            </InViewSection>
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         </div>
                     </div>

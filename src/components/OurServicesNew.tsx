@@ -45,23 +45,37 @@ function ServiceCard({
     icon: IconSquareIconType;
 }) {
     return (
-        <div className="bg-white p-6 rounded-lg">
-            <IconSquare icon={icon} />
-            <h3 className="text-lg font-semibold">{title}</h3>
-            <p className="text-gray-600">{description}</p>
+        <div className="bg-white p-8 rounded-2xl h-full flex flex-col shadow-sm border border-gray-100">
+            <div className="mb-6">
+                <IconSquare icon={icon} />
+            </div>
+            <h6 className="text-xl font-bold text-gray-900 mb-4">{title}</h6>
+            <p className="text-gray-600 flex-grow leading-relaxed">
+                {description}
+            </p>
         </div>
     );
 }
 
 export function OurServicesNew() {
     return (
-        <section className="w-100 bg-gray-100">
-            <div className="container">
-                <SlashHeader text="WHAT WE DO" />
-                <h2 className="h2-heading-text">
-                    Dedicated to offering a wide range of services
-                </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 py-16">
+        <section className="relative w-100 pt-8 bg-gray-50">
+            {/* Curved transition from white to gray */}
+            <div
+                className="absolute top-0 left-0 w-full h-16 bg-white"
+                style={{
+                    clipPath: "ellipse(100% 100% at 50% 0%)",
+                }}></div>
+
+            <div className="container mx-auto space-y-8 px-6 relative z-10 pt-20">
+                <InViewSection className="space-y-8 ">
+                    <SlashHeader text="WHAT WE DO" />
+                    <h2 className="h2-heading-text">
+                        Dedicated to offering a wide range of services
+                    </h2>
+                </InViewSection>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-10 pt-2">
                     {services.map((service, index) => (
                         <InViewSection
                             key={index}

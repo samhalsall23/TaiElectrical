@@ -1,30 +1,50 @@
 "use client";
 
-import Image from "next/image";
-import { Typewriter } from "react-simple-typewriter";
-import { ContactForm } from "@/components/ContactForm";
-import { AiOutlineThunderbolt } from "react-icons/ai";
 import { ArrowRight } from "lucide-react";
 import { InViewSection } from "./InViewSection";
-import { useEffect, useState } from "react";
 import { Button } from "./ui/button";
 import { AiOutlineContacts } from "react-icons/ai";
-import { IoLocationOutline } from "react-icons/io5";
+import { LuMapPinned } from "react-icons/lu";
+
+function InfoCard({
+    title,
+    text,
+    icon,
+}: {
+    title: string;
+    text: string[];
+    icon: React.ReactNode;
+}) {
+    return (
+        <div className="flex flex-col text-start flex-1">
+            <InViewSection>
+                <div className="flex items-center gap-3 mb-6">
+                    {icon}
+                    <h2 className="text-lg md:text-xl font-bold text-gray-900 whitespace-nowrap">
+                        {title}
+                    </h2>
+                </div>
+                <div className="space-y-3">
+                    {text.map((line, index) => (
+                        <p
+                            key={index}
+                            className="text-gray-800 text-base text-md md:text-lg font-medium whitespace-nowrap">
+                            {line}
+                        </p>
+                    ))}
+                </div>
+            </InViewSection>
+        </div>
+    );
+}
 
 export function BelowHero() {
-    const [showTypewriter, setShowTypewriter] = useState(false);
-
-    useEffect(() => {
-        const timer = setTimeout(() => setShowTypewriter(true), 1200);
-        return () => clearTimeout(timer);
-    }, []);
-
     return (
         <section className="lg:flex justify-between items-center">
             <div className="md:order-2 w-full lg:w-2/5 xl:w-1/2">
                 <div className="bg-orange-200 bg-opacity-75 w-full lg:w-3/4 rounded-b-lg p-12 m-0 lg:m-8 lg:mt-0">
                     <InViewSection>
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl  xl:text-5xl text-zinc-800 font-medium mb-4 flex-wrap">
+                        <h2 className="text-2xl sm:text-3xl md:text-2xl  xl:text-3xl 2xl:text-4xl text-zinc-800 font-medium mb-4 flex-wrap">
                             Get in touch with our skilled electricians today!
                         </h2>
                         <Button
@@ -40,43 +60,26 @@ export function BelowHero() {
 
             <div className="mx-auto py-4 md:order-1 w-1/2 flex justify-center">
                 <div className="flex flex-col my-2 sm:flex-row items-start space-y-8 sm:space-y-0 sm:space-x-16">
-                    <div className="flex flex-col text-center flex-1">
-                        <InViewSection>
-                            <div className="flex flex-col items-center space-y-3 mb-6">
-                                <AiOutlineContacts className="text-yellow text-5xl md:text-6xl" />
-                                <h2 className="text-xl md:text-2xl font-bold text-gray-900 whitespace-nowrap">
-                                    Contact Us
-                                </h2>
-                            </div>
-                            <div className="space-y-2">
-                                <p className="text-gray-700 text-md md:text-lg whitespace-nowrap">
-                                    contact@gmail.com
-                                </p>
-                                <p className="text-gray-700 text-md md:text-lg whitespace-nowrap">
-                                    0444 444 444
-                                </p>
-                            </div>
-                        </InViewSection>
-                    </div>
-                    <div className="hidden sm:block h-48 w-px bg-gray-300"></div>
-                    <div className="flex flex-col text-center flex-1">
-                        <InViewSection>
-                            <div className="flex flex-col items-center space-y-3 mb-6">
-                                <IoLocationOutline className="text-yellow text-5xl md:text-6xl" />
-                                <h2 className="text-xl md:text-2xl font-bold text-gray-900 whitespace-nowrap">
-                                    Our Location
-                                </h2>
-                            </div>
-                            <div className="space-y-2">
-                                <p className="text-gray-700 text-md md:text-lg whitespace-nowrap">
-                                    Greater Melbourne
-                                </p>
-                                <p className="text-gray-700 text-md md:text-lg whitespace-nowrap">
-                                    Area
-                                </p>
-                            </div>
-                        </InViewSection>
-                    </div>
+                    <InfoCard
+                        title="Contact Us"
+                        text={[
+                            "Phone: (03) 9005 1234",
+                            "Email: contact@gmail.com",
+                        ]}
+                        icon={
+                            <AiOutlineContacts className="text-yellow text-3xl md:text-2xl" />
+                        }
+                    />
+
+                    <div className="hidden sm:block h-20 w-px bg-gray-200 self-center"></div>
+
+                    <InfoCard
+                        title="Our Location"
+                        text={["123 Main St", "Melbourne, VIC 3000"]}
+                        icon={
+                            <LuMapPinned className="text-yellow text-3xl md:text-2xl" />
+                        }
+                    />
                 </div>
             </div>
         </section>

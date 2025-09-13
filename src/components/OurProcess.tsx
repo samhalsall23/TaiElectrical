@@ -61,7 +61,7 @@ function ProcessStep({
 
 export function OurProcess() {
     return (
-        <section className="py-16">
+        <section className="py-12">
             <div className="container mx-auto px-6 space-y-8">
                 <InViewSection className="space-y-8">
                     <SlashHeader text="WHAT TO EXPECT" />

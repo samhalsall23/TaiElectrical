@@ -87,6 +87,10 @@
     }
 }
 
+h6 {
+    @apply text-gray-900;
+}
+
 /* Custom classes */
 .p-heading-text {
     @apply text-base sm:text-lg lg:text-xl text-zinc-600 font-normal leading-relaxed max-w-2xl mx-auto lg:mx-0;
