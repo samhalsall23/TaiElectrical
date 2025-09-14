@@ -1,17 +1,13 @@
 "use client";
 
-import {
-    GetStarted,
-    GallerySection,
-    ReviewsSection,
-    LoadingOverlay,
-} from "@/components";
+import { GetStarted, LoadingOverlay } from "@/components";
 import { AboutUsNew } from "@/components/AboutUsNew";
 import { BelowHero } from "@/components/BelowHero";
 import { ContactInfoDivider } from "@/components/ContactInfoDivider";
 import { NewHeroSection } from "@/components/NewHeroSection";
 import { OurProcessTest } from "@/components/OurProcessTest";
 import { OurServicesNew } from "@/components/OurServicesNew";
+import { ProjectsNew } from "@/components/ProjectsNew";
 import { ReviewsNew } from "@/components/ReviewsNew";
 import { useEffect, useState } from "react";
 
@@ -32,10 +28,10 @@ export default function Home() {
                     <BelowHero />
                     <AboutUsNew />
                     <OurProcessTest />
-                    {/* <OurProcess /> */}
                     <OurServicesNew />
                     <ContactInfoDivider />
                     <ReviewsNew />
+                    <ProjectsNew />
 
                     {/* <HeroSection /> */}
                     {/* <HomePageServices /> */}
@@ -43,7 +39,7 @@ export default function Home() {
                     {/* <ProjectsSection /> */}
                     {/* <div className="py-12 bg-gray-50"></div>
                     <ReviewsSection /> */}
-                    <GallerySection />
+                    {/* <GallerySection /> */}
                     <GetStarted />
                 </>
             )}

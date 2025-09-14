@@ -10,7 +10,7 @@ const aboutUsDotPoints = [
     "Free Consultations and Estimates",
 ];
 
-function AboutUsDotPoint({ text }: { text: string }) {
+export function AboutUsDotPoint({ text }: { text: string }) {
     return (
         <li className="text-zinc-600 flex items-center gap-3 py-2 ms-4">
             <IconSquare icon="check" size="md" />
