@@ -8,6 +8,7 @@ import {
 } from "@/components";
 import { AboutUsNew } from "@/components/AboutUsNew";
 import { BelowHero } from "@/components/BelowHero";
+import { ContactInfoDivider } from "@/components/ContactInfoDivider";
 import { NewHeroSection } from "@/components/NewHeroSection";
 import { OurProcessTest } from "@/components/OurProcessTest";
 import { OurServicesNew } from "@/components/OurServicesNew";
@@ -32,6 +33,7 @@ export default function Home() {
                     <OurProcessTest />
                     {/* <OurProcess /> */}
                     <OurServicesNew />
+                    <ContactInfoDivider />
 
                     {/* <HeroSection /> */}
                     {/* <HomePageServices /> */}
