@@ -1,42 +1,26 @@
 import * as React from "react";
-import { FaRegUser } from "react-icons/fa";
-import { MdOutlineMail } from "react-icons/md";
-import { FiPhone } from "react-icons/fi";
 
 import { cn } from "@/lib/utils";
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    icon?: "name" | "email" | "phone";
-    isError?: boolean;
-}
-
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
-    ({ className, type, icon, isError = false, ...props }, ref) => {
-        return (
-            <div className="relative flex w-full bg-transparent">
-                <input
-                    type={type}
-                    className={cn(
-                        "flex h-9 w-full transition-colors bg-transparent text-black placeholder:text-black focus:outline-none border-b-2 pr-10", // Add padding-right for the icon
-                        isError ? "border-red-700" : "border-black",
-                        className
-                    )}
-                    ref={ref}
-                    {...props}
-                />
-
-                <div
-                    className={`absolute right-2 bottom-2 ${
-                        isError ? "text-red-700" : "text-black"
-                    }`}>
-                    {icon === "name" && <FaRegUser size={20} />}
-                    {icon === "email" && <MdOutlineMail size={20} />}
-                    {icon === "phone" && <FiPhone size={20} />}
-                </div>
-            </div>
-        );
-    }
-);
+const Input = React.forwardRef<
+    HTMLInputElement,
+    React.ComponentProps<"input"> & { isError?: boolean }
+>(({ className, type, isError, ...props }, ref) => {
+    return (
+        <input
+            type={type}
+            className={cn(
+                "bg-white text-zinc-900 placeholder:text-zinc-600",
+                "flex h-12 w-full rounded-md border border-zinc-300 px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground focus-visible:outline-none focus:border-zinc-900 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+                isError &&
+                    "border-red-600 focus-visible:ring-red-600 text-red-600 placeholder:text-red-600",
+                className
+            )}
+            ref={ref}
+            {...props}
+        />
+    );
+});
 Input.displayName = "Input";
 
 export { Input };

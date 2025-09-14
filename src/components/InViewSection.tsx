@@ -34,7 +34,7 @@ export function InViewSection({
                 isVisible
                     ? "opacity-100 translate-y-0 scale-100 visible"
                     : "opacity-0 translate-y-6 scale-95 invisible",
-                className
+                className ? className : "delay-100"
             )}>
             {children}
         </div>

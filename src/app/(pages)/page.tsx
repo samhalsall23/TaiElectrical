@@ -3,6 +3,7 @@
 import { GetStarted, LoadingOverlay } from "@/components";
 import { AboutUsNew } from "@/components/AboutUsNew";
 import { BelowHero } from "@/components/BelowHero";
+import { ContactFormNew } from "@/components/ContactFormNew";
 import { ContactInfoDivider } from "@/components/ContactInfoDivider";
 import { NewHeroSection } from "@/components/NewHeroSection";
 import { OurProcessTest } from "@/components/OurProcessTest";
@@ -32,6 +33,7 @@ export default function Home() {
                     <ContactInfoDivider />
                     <ReviewsNew />
                     <ProjectsNew />
+                    <ContactFormNew />
 
                     {/* <HeroSection /> */}
                     {/* <HomePageServices /> */}

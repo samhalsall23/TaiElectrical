@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sendEmail } from "@/app/actions/sendEmail";
 import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+import { Input } from "./ui/inputx";
 import { TextArea } from "./ui/textarea";
 import { cn } from "@/lib/utils";
 

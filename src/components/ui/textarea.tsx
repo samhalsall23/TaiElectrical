@@ -1,36 +1,25 @@
 import * as React from "react";
-import { FaRegCommentDots } from "react-icons/fa"; // Example icon for the textarea
 
 import { cn } from "@/lib/utils";
 
-interface TextAreaProps extends React.ComponentProps<"textarea"> {
-    isError?: boolean; // Add isError prop
-}
-
-const TextArea = React.forwardRef<HTMLTextAreaElement, TextAreaProps>(
-    ({ className, isError, ...props }, ref) => {
-        return (
-            <div className="relative flex w-full bg-transparent">
-                <textarea
-                    className={cn(
-                        "flex w-full h-24 transition-colors bg-transparent text-black placeholder:text-black focus:outline-none border-b-2 pr-10 resize-none", // Add padding-right for the icon
-                        isError ? "border-red-700" : "border-black",
-                        className
-                    )}
-                    ref={ref}
-                    {...props}
-                />
-
-                <div
-                    className={`absolute right-2 bottom-2 ${
-                        isError ? "text-red-700" : "text-black"
-                    }`}>
-                    <FaRegCommentDots size={20} />
-                </div>
-            </div>
-        );
-    }
-);
+const TextArea = React.forwardRef<
+    HTMLTextAreaElement,
+    React.ComponentProps<"textarea"> & { isError?: boolean }
+>(({ className, isError, ...props }, ref) => {
+    return (
+        <textarea
+            className={cn(
+                "bg-white text-zinc-900 placeholder:text-zinc-600",
+                "flex min-h-[80px] w-full rounded-md border border-zinc-300 px-3 py-2 text-base shadow-sm transition-colors focus-visible:outline-none focus:border-zinc-900 disabled:cursor-not-allowed disabled:opacity-50 resize-none md:text-sm",
+                isError &&
+                    "border-red-600 focus-visible:ring-red-600 text-red-600 placeholder:text-red-600",
+                className
+            )}
+            ref={ref}
+            {...props}
+        />
+    );
+});
 TextArea.displayName = "TextArea";
 
 export { TextArea };

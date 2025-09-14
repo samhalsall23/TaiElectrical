@@ -79,15 +79,18 @@ const Navbar: React.FC = () => {
                             href="https://www.instagram.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center border-2 border-yellow rounded-full hover:bg-yellow hover:text-white shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
-                            <FaInstagram className="text-black" size={16} />
+                            className="group w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center border-2 border-yellow rounded-full hover:bg-yellow hover:text-white shadow-md hover:shadow-lg transition-all duration-150 hover:scale-110">
+                            <FaInstagram
+                                className="text-black group-hover:scale-110 transition-transform duration-150"
+                                size={16}
+                            />
                         </Link>
 
                         <Link
                             href="tel:0444444444"
-                            className="bg-yellow h-8 lg:h-10 px-2 lg:px-3 flex items-center justify-between rounded-full shadow-md hover:shadow-2xl transition-all duration-300 hover:scale-105">
+                            className="group bg-yellow h-8 lg:h-10 px-2 lg:px-5 flex items-center justify-between rounded-full shadow-md hover:shadow-2xl transition-all duration-300">
                             <FiPhone
-                                className="text-black self-center"
+                                className="text-black self-center transition-transform duration-300 group-hover:translate-x-1"
                                 size={16}
                             />
                             <span className="text-black text-md lg:text-lg px-2 lg:px-3 py-1 lg:py-2">
