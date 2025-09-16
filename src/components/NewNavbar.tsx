@@ -6,7 +6,6 @@ import Link from "next/link";
 
 import {
     CALL_US_LINK,
-    NAVBAR_HEIGHT,
     SITE_INSTAGRAM,
     SITE_PHONE_NUMBER,
 } from "@/lib/constants";
@@ -151,11 +150,12 @@ const Navbar: React.FC = () => {
             </nav>
 
             {/* Mobile Menu Overlay and Content */}
-            <div className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
-                isMobileMenuOpen 
-                    ? "opacity-100 pointer-events-auto" 
-                    : "opacity-0 pointer-events-none"
-            }`}>
+            <div
+                className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
+                    isMobileMenuOpen
+                        ? "opacity-100 pointer-events-auto"
+                        : "opacity-0 pointer-events-none"
+                }`}>
                 {/* Background Overlay with darkening animation */}
                 <div
                     className={`absolute inset-0 transition-all duration-500 ${
@@ -163,18 +163,17 @@ const Navbar: React.FC = () => {
                     }`}
                     onClick={closeMobileMenu}
                 />
-                
+
                 {/* Sliding Menu Panel */}
-                <div className={`absolute top-16 left-0 right-0 bg-gray-50 border-b border-gray-300 shadow-lg transform transition-all duration-300 ease-out ${
-                    isMobileMenuOpen 
-                        ? "translate-y-0 opacity-100" 
-                        : "-translate-y-full opacity-0"
-                }`}>
+                <div
+                    className={`absolute top-16 left-0 right-0 bg-gray-50 border-b border-gray-300 shadow-lg transform transition-all duration-300 ease-out ${
+                        isMobileMenuOpen
+                            ? "translate-y-0 opacity-100"
+                            : "-translate-y-full opacity-0"
+                    }`}>
                     <div className="container mx-auto py-6 space-y-4">
                         <button
-                            onClick={() =>
-                                scrollToSectionAndCloseMenu("about")
-                            }
+                            onClick={() => scrollToSectionAndCloseMenu("about")}
                             className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
                             About
                         </button>

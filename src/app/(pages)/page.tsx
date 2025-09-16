@@ -1,6 +1,6 @@
 "use client";
 
-import { GetStarted, LoadingOverlay } from "@/components";
+import { LoadingOverlay } from "@/components";
 import { AboutUsNew } from "@/components/AboutUsNew";
 import { BelowHero } from "@/components/BelowHero";
 import { ContactFormNew } from "@/components/ContactFormNew";
