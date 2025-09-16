@@ -42,7 +42,7 @@ export default function Home() {
                     {/* <div className="py-12 bg-gray-50"></div>
                     <ReviewsSection /> */}
                     {/* <GallerySection /> */}
-                    <GetStarted />
+                    {/* <GetStarted /> */}
                 </>
             )}
         </>

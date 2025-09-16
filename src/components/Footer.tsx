@@ -1,7 +1,7 @@
 export function Footer() {
     return (
-        <footer className="bg-gray-700 text-white py-6">
-            <div className="container mx-auto text-center">
+        <footer className="bg-gray-100 text-zinc-600 pt-6 pb-2">
+            <div className="container mx-auto text-center font-bold">
                 <p className="text-sm mb-4">
                     © {new Date().getFullYear()} Tai Electrical. All rights
                     reserved.

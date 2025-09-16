@@ -11,6 +11,7 @@ import { TextArea } from "./ui/textarea";
 import { cn } from "@/lib/utils";
 import { InViewSection } from "./InViewSection";
 import { Input } from "./ui/input";
+import { SITE_PHONE_NUMBER } from "@/lib/constants";
 
 const errorClass = cn("text-red-600 text-sm font-semibold mt-1");
 
@@ -52,24 +53,12 @@ export function ContactFormNew() {
             setStatus("success");
         } catch (error) {
             console.error("Error sending email:", error);
-            setErrorMessage("Failed to send email. Please try again later.");
+            setErrorMessage(
+                `Failed to send email. Please try contact us directly on ${SITE_PHONE_NUMBER}`
+            );
             setStatus("error");
         }
     };
-
-    if (status === "success") {
-        return (
-            <div className="flex flex-col items-center justify-center px-8 mt-6 py-14 bg-green-100 rounded-md">
-                <h2 className="text-3xl font-bold text-green-800">
-                    Thank you!
-                </h2>
-                <p className="text-lg text-green-700 mt-2">
-                    Your message has been sent successfully. We will get back to
-                    you soon.
-                </p>
-            </div>
-        );
-    }
 
     return (
         <>
@@ -83,115 +72,134 @@ export function ContactFormNew() {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start lg:items-center">
                         <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8">
-                            <SlashHeader text="GET IN TOUCH" />
-                            <h2 className="h2-heading-text mb-6 lg:mb-8">
-                                Get a free quote today!
-                            </h2>
-                            <div>
-                                <form
-                                    onSubmit={handleSubmit(onSubmit)}
-                                    className="space-y-4 lg:space-y-6">
-                                    <div className="flex flex-col gap-4 lg:gap-6 w-full">
-                                        <div>
-                                            <label
-                                                htmlFor="name"
-                                                className="block text-sm text-gray-700 font-semibold mb-2 uppercase tracking-wide">
-                                                NAME
-                                            </label>
-                                            <Input
-                                                id="name"
-                                                {...register("name")}
-                                                isError={!!errors.name}
-                                                type="text"
-                                                placeholder="John Doe"
-                                                className="w-full"
-                                            />
-                                            {errors.name && (
-                                                <p className={errorClass}>
-                                                    {errors.name.message}
-                                                </p>
-                                            )}
-                                        </div>
-
-                                        <div>
-                                            <label
-                                                htmlFor="email"
-                                                className="block text-sm text-gray-700 font-semibold mb-2 uppercase tracking-wide">
-                                                EMAIL
-                                            </label>
-                                            <Input
-                                                id="email"
-                                                {...register("email")}
-                                                isError={!!errors.email}
-                                                type="email"
-                                                placeholder="contact@email.com"
-                                                className="w-full"
-                                            />
-                                            {errors.email && (
-                                                <p className={errorClass}>
-                                                    {errors.email.message}
-                                                </p>
-                                            )}
-                                        </div>
-
-                                        <div>
-                                            <label
-                                                htmlFor="phone"
-                                                className="block text-sm text-gray-700 font-semibold mb-2 uppercase tracking-wide">
-                                                PHONE
-                                            </label>
-                                            <Input
-                                                id="phone"
-                                                {...register("phone")}
-                                                isError={!!errors.phone}
-                                                type="tel"
-                                                placeholder="0444 444 444"
-                                                className="w-full"
-                                            />
-                                            {errors.phone && (
-                                                <p className={errorClass}>
-                                                    {errors.phone.message}
-                                                </p>
-                                            )}
-                                        </div>
-
-                                        <div>
-                                            <label
-                                                htmlFor="message"
-                                                className="block text-sm text-gray-700 font-semibold mb-2 uppercase tracking-wide">
-                                                MESSAGE
-                                            </label>
-                                            <TextArea
-                                                id="message"
-                                                {...register("message")}
-                                                isError={!!errors.message}
-                                                placeholder="Please type your message here..."
-                                                className="w-full h-24 sm:h-32 resize-none"
-                                            />
-                                            {errors.message && (
-                                                <p className={errorClass}>
-                                                    {errors.message.message}
-                                                </p>
-                                            )}
-                                        </div>
-
-                                        <Button
-                                            type="submit"
-                                            className="w-full sm:w-auto rounded-full mt-6"
-                                            disabled={status === "submitting"}>
-                                            {status === "submitting"
-                                                ? "Sending..."
-                                                : "Send Message"}
-                                        </Button>
-                                    </div>
-
-                                    {status === "error" && (
-                                        <p className="mt-4 text-red-800">
-                                            {errorMessage}
+                            <InViewSection className="space-y-6 lg:space-y-8">
+                                <SlashHeader text="CONTACT US" />
+                                <h2 className="h2-heading-text mb-6 lg:mb-8">
+                                    Get a free quote today!
+                                </h2>
+                            </InViewSection>
+                            <InViewSection>
+                                {status === "success" ? (
+                                    <div className="flex flex-col items-center justify-center px-8 mt-6 py-14 bg-green-100 rounded-xl">
+                                        <h2 className="text-3xl font-bold text-zinc-800">
+                                            Thank you!
+                                        </h2>
+                                        <p className="text-lg text-zinc-800 mt-2">
+                                            Your message has been sent
+                                            successfully. We will get back to
+                                            you soon.
                                         </p>
-                                    )}
-                                </form>
-                            </div>
+                                    </div>
+                                ) : (
+                                    <form
+                                        onSubmit={handleSubmit(onSubmit)}
+                                        className="space-y-4 lg:space-y-6">
+                                        <div className="flex flex-col gap-4 lg:gap-6 w-full">
+                                            <div>
+                                                <label
+                                                    htmlFor="name"
+                                                    className="block text-sm text-zinc-900 font-semibold mb-2 uppercase tracking-wide">
+                                                    NAME
+                                                </label>
+                                                <Input
+                                                    id="name"
+                                                    {...register("name")}
+                                                    isError={!!errors.name}
+                                                    type="text"
+                                                    placeholder="John Doe"
+                                                    className="w-full"
+                                                />
+                                                {errors.name && (
+                                                    <p className={errorClass}>
+                                                        {errors.name.message}
+                                                    </p>
+                                                )}
+                                            </div>
+
+                                            <div>
+                                                <label
+                                                    htmlFor="email"
+                                                    className="block text-sm text-zinc-900 font-semibold mb-2 uppercase tracking-wide">
+                                                    EMAIL
+                                                </label>
+                                                <Input
+                                                    id="email"
+                                                    {...register("email")}
+                                                    isError={!!errors.email}
+                                                    type="email"
+                                                    placeholder="contact@email.com"
+                                                    className="w-full"
+                                                />
+                                                {errors.email && (
+                                                    <p className={errorClass}>
+                                                        {errors.email.message}
+                                                    </p>
+                                                )}
+                                            </div>
+
+                                            <div>
+                                                <label
+                                                    htmlFor="phone"
+                                                    className="block text-sm text-zinc-900 font-semibold mb-2 uppercase tracking-wide">
+                                                    PHONE
+                                                </label>
+                                                <Input
+                                                    id="phone"
+                                                    {...register("phone")}
+                                                    isError={!!errors.phone}
+                                                    type="tel"
+                                                    placeholder="0444 444 444"
+                                                    className="w-full"
+                                                />
+                                                {errors.phone && (
+                                                    <p className={errorClass}>
+                                                        {errors.phone.message}
+                                                    </p>
+                                                )}
+                                            </div>
+
+                                            <div>
+                                                <label
+                                                    htmlFor="message"
+                                                    className="block text-sm text-zinc-900 font-semibold mb-2 uppercase tracking-wide">
+                                                    MESSAGE
+                                                </label>
+                                                <TextArea
+                                                    id="message"
+                                                    {...register("message")}
+                                                    isError={!!errors.message}
+                                                    placeholder="Please type your message here..."
+                                                    className="w-full h-24 sm:h-32 resize-none"
+                                                />
+                                                {errors.message && (
+                                                    <p className={errorClass}>
+                                                        {errors.message.message}
+                                                    </p>
+                                                )}
+                                            </div>
+
+                                            <Button
+                                                type="submit"
+                                                className="w-full sm:w-auto rounded-full"
+                                                disabled={
+                                                    status === "submitting"
+                                                }>
+                                                {status === "submitting"
+                                                    ? "Sending..."
+                                                    : "Send Message"}
+                                            </Button>
+                                        </div>
+
+                                        {status === "error" && (
+                                            <div className="bg-red-500/10 mt-10 p-4 rounded-xl ">
+                                                <p className={errorClass}>
+                                                    {errorMessage}
+                                                </p>
+                                            </div>
+                                        )}
+                                    </form>
+                                )}
+                            </InViewSection>
                         </div>
 
                         <div className="w-full lg:w-1/2 mt-8 lg:mt-0">
