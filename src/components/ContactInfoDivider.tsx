@@ -1,13 +1,14 @@
+import { QUOTE_BUTTON_TEXT } from "@/lib/constants";
 import { InViewSection } from "./InViewSection";
 import { Button } from "./ui/button";
 
 function ContactCard({ title, text }: { title: string; text: string }) {
     return (
         <div>
-            <h6 className="text-sm font-medium text-gray-600 tracking-wide mb-3">
+            <h6 className="text-sm font-medium text-zinc-800 tracking-wide mb-3">
                 {title}
             </h6>
-            <h3 className="text-xl font-bold text-gray-900">{text}</h3>
+            <h3 className="text-xl font-bold text-zinc-900">{text}</h3>
         </div>
     );
 }
@@ -26,8 +27,9 @@ export function ContactInfoDivider() {
                         <Button
                             className="rounded-full group"
                             size={"lg"}
+                            buttonType="quote"
                             hasArrow={true}>
-                            Get a Quote
+                            {QUOTE_BUTTON_TEXT}
                         </Button>
                     </InViewSection>
                 </div>

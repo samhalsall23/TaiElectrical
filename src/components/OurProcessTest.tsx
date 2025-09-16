@@ -38,7 +38,7 @@ function ProcessStep({
         <div className="relative flex items-start gap-3 lg:gap-8">
             {/* Timeline Line */}
             {!isLast && (
-                <div className="absolute left-6 lg:left-7 top-12 lg:top-14 w-0.5 h-12 lg:h-20 bg-gradient-to-b from-amber-300 to-amber-100"></div>
+                <div className="absolute left-6 lg:left-7 top-12 lg:top-14 w-0.5 h-20 xs:h-16 lg:h-24 bg-gradient-to-b from-amber-300 to-amber-100"></div>
             )}
 
             {/* Step Number Circle */}
@@ -48,7 +48,7 @@ function ProcessStep({
 
             {/* Content */}
             <div className="flex-1 pb-6 lg:pb-12">
-                <h3 className="text-gray-800 text-base lg:text-lg font-bold mb-1 lg:mb-3 leading-tight">
+                <h3 className="text-gray-800 text-base lg:text-lg font-bold mb-2 lg:mb-3 leading-tight">
                     {title}
                 </h3>
                 <p className="p-heading-text text-sm lg:text-base">

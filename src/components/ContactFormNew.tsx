@@ -85,7 +85,7 @@ export function ContactFormNew() {
                         <div className="w-full lg:w-1/2 space-y-6 lg:space-y-8">
                             <SlashHeader text="GET IN TOUCH" />
                             <h2 className="h2-heading-text mb-6 lg:mb-8">
-                                Get a free quote
+                                Get a free quote today!
                             </h2>
                             <div>
                                 <form

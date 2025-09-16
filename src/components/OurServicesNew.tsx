@@ -1,3 +1,4 @@
+import { QUOTE_BUTTON_TEXT } from "@/lib/constants";
 import IconSquare, { IconSquareIconType } from "./icons/IconSquare";
 import { InViewSection } from "./InViewSection";
 import { SlashHeader } from "./SlashHeader";
@@ -79,15 +80,17 @@ export function OurServicesNew() {
                             <Button
                                 size={"md"}
                                 className="md:hidden mt-2 font-semibold rounded-full w-fit group hover:border-amber-400 hover:bg-amber-400"
-                                hasArrow={true}>
-                                Get a Quote
+                                hasArrow={true}
+                                buttonType="quote">
+                                {QUOTE_BUTTON_TEXT}
                             </Button>
                         </div>
                         <Button
                             size={"md"}
                             className="hidden md:flex mt-6 font-semibold rounded-full group w-full sm:w-auto hover:border-amber-400 hover:bg-amber-400"
-                            hasArrow={true}>
-                            Get a Quote
+                            hasArrow={true}
+                            buttonType="quote">
+                            {QUOTE_BUTTON_TEXT}
                         </Button>
                     </div>
                 </InViewSection>
