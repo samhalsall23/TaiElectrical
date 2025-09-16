@@ -150,57 +150,69 @@ const Navbar: React.FC = () => {
                 </div>
             </nav>
 
-            {isMobileMenuOpen && (
-                <div className="px-auto fixed inset-0 z-40 md:hidden">
-                    <div
-                        className="absolute inset-0 bg-black/50"
-                        onClick={closeMobileMenu}
-                    />
-                    <div className="absolute top-16 left-0 right-0 bg-gray-50 border-b border-gray-300 shadow-lg">
-                        <div className="container mx-auto py-6 space-y-4">
-                            <button
-                                onClick={() =>
-                                    scrollToSectionAndCloseMenu("about")
-                                }
-                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
-                                About
-                            </button>
-                            <button
-                                onClick={() =>
-                                    scrollToSectionAndCloseMenu("services")
-                                }
-                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
-                                Services
-                            </button>
-                            <button
-                                onClick={() =>
-                                    scrollToSectionAndCloseMenu("projects")
-                                }
-                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
-                                Projects
-                            </button>
-                            <button
-                                onClick={() =>
-                                    scrollToSectionAndCloseMenu("contact")
-                                }
-                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
-                                Contact
-                            </button>
+            {/* Mobile Menu Overlay and Content */}
+            <div className={`fixed inset-0 z-40 md:hidden transition-all duration-300 ${
+                isMobileMenuOpen 
+                    ? "opacity-100 pointer-events-auto" 
+                    : "opacity-0 pointer-events-none"
+            }`}>
+                {/* Background Overlay with darkening animation */}
+                <div
+                    className={`absolute inset-0 transition-all duration-500 ${
+                        isMobileMenuOpen ? "bg-black/60" : "bg-black/0"
+                    }`}
+                    onClick={closeMobileMenu}
+                />
+                
+                {/* Sliding Menu Panel */}
+                <div className={`absolute top-16 left-0 right-0 bg-gray-50 border-b border-gray-300 shadow-lg transform transition-all duration-300 ease-out ${
+                    isMobileMenuOpen 
+                        ? "translate-y-0 opacity-100" 
+                        : "-translate-y-full opacity-0"
+                }`}>
+                    <div className="container mx-auto py-6 space-y-4">
+                        <button
+                            onClick={() =>
+                                scrollToSectionAndCloseMenu("about")
+                            }
+                            className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
+                            About
+                        </button>
+                        <button
+                            onClick={() =>
+                                scrollToSectionAndCloseMenu("services")
+                            }
+                            className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
+                            Services
+                        </button>
+                        <button
+                            onClick={() =>
+                                scrollToSectionAndCloseMenu("projects")
+                            }
+                            className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
+                            Projects
+                        </button>
+                        <button
+                            onClick={() =>
+                                scrollToSectionAndCloseMenu("contact")
+                            }
+                            className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
+                            Contact
+                        </button>
 
-                            <div className="pt-4 border-t border-gray-300">
-                                <Link
-                                    href={SITE_INSTAGRAM}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex ps-4 items-center space-x-3 text-lg font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2">
-                                    <FaInstagram size={20} />
-                                    <span>Follow us on Instagram</span>
-                                </Link>
-                            </div>
+                        <div className="pt-4 border-t border-gray-300">
+                            <Link
+                                href={SITE_INSTAGRAM}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex ps-4 items-center space-x-3 text-lg font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2">
+                                <FaInstagram size={20} />
+                                <span>Follow us on Instagram</span>
+                            </Link>
                         </div>
                     </div>
                 </div>
-            )}
+            </div>
         </>
     );
 };
