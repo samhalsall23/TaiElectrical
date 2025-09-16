@@ -50,8 +50,8 @@ function ServiceCard({
             <div className="mb-6">
                 <IconSquare icon={icon} />
             </div>
-            <h6 className="text-xl font-bold text-gray-900 mb-4">{title}</h6>
-            <p className="text-gray-600 flex-grow leading-relaxed">
+            <h6 className="text-xl font-bold text-zinc-800 mb-4">{title}</h6>
+            <p className="text-zinc-600 flex-grow leading-relaxed">
                 {description}
             </p>
         </div>
