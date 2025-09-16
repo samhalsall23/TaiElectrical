@@ -5,6 +5,11 @@ import { InViewSection } from "./InViewSection";
 import { Button } from "./ui/button";
 import { AiOutlineContacts } from "react-icons/ai";
 import { LuMapPinned } from "react-icons/lu";
+import {
+    QUOTE_BUTTON_TEXT,
+    SITE_EMAIL_ADDRESS,
+    SITE_PHONE_NUMBER,
+} from "@/lib/constants";
 
 function InfoCard({
     title,
@@ -41,7 +46,7 @@ function InfoCard({
 export function BelowHero() {
     return (
         <section className="lg:flex justify-between items-center">
-            <div className="md:order-2 w-full lg:w-2/5 xl:w-1/2">
+            <div className="md:order-2 w-full lg:w-2/5 2xl:w-1/2">
                 <div className="bg-orange-200 bg-opacity-75 w-full lg:w-3/4 rounded-b-lg p-12 m-0 lg:m-8 lg:mt-0">
                     <InViewSection>
                         <h2 className="text-2xl sm:text-3xl md:text-2xl  xl:text-3xl 2xl:text-4xl text-zinc-800 font-medium mb-4 flex-wrap">
@@ -50,21 +55,22 @@ export function BelowHero() {
                         <Button
                             variant={"outline"}
                             size="lg"
+                            buttonType="quote"
                             className="font-semibold rounded-full group mt-3 hover:bg-orange-200">
-                            Get a Quote
+                            {QUOTE_BUTTON_TEXT}
                             <ArrowRight className="font-black ml-2 h-5 w-5 transition-transform duration-300 group-hover:translate-x-2" />
-                        </Button>{" "}
+                        </Button>
                     </InViewSection>
                 </div>
             </div>
 
-            <div className="mx-auto py-4 md:order-1 w-1/2 flex justify-center">
+            <div className="container pt-8 px-6 mx-auto md:py-4 md:order-1 md:w-1/2 flex justify-start md:justify-center">
                 <div className="flex flex-col my-2 sm:flex-row items-start space-y-8 sm:space-y-0 sm:space-x-16">
                     <InfoCard
                         title="Contact Us"
                         text={[
-                            "Phone: (03) 9005 1234",
-                            "Email: contact@gmail.com",
+                            `Phone: ${SITE_PHONE_NUMBER}`,
+                            `Email: ${SITE_EMAIL_ADDRESS}`,
                         ]}
                         icon={
                             <AiOutlineContacts className="text-yellow text-3xl md:text-2xl" />
@@ -75,7 +81,7 @@ export function BelowHero() {
 
                     <InfoCard
                         title="Our Location"
-                        text={["123 Main St", "Melbourne, VIC 3000"]}
+                        text={["Greater Melbourne Area", "Victoria, Australia"]}
                         icon={
                             <LuMapPinned className="text-yellow text-3xl md:text-2xl" />
                         }
