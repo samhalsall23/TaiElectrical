@@ -33,7 +33,7 @@ function InfoCard({
                     {text.map((line, index) => (
                         <p
                             key={index}
-                            className="text-gray-800 text-base text-md md:text-lg font-medium whitespace-nowrap">
+                            className="p-heading-text whitespace-nowrap">
                             {line}
                         </p>
                     ))}
