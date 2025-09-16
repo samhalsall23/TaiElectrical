@@ -35,23 +35,23 @@ function ProcessStep({
     isLast: boolean;
 }) {
     return (
-        <div className="relative flex items-start gap-4">
+        <div className="relative flex items-start gap-3 lg:gap-8">
             {/* Timeline Line */}
             {!isLast && (
-                <div className="absolute left-6 top-12 w-0.5 h-16 bg-gradient-to-b from-amber-300 to-amber-100"></div>
+                <div className="absolute left-6 lg:left-7 top-12 lg:top-14 w-0.5 h-12 lg:h-20 bg-gradient-to-b from-amber-300 to-amber-100"></div>
             )}
 
             {/* Step Number Circle */}
-            <div className="relative z-10 w-12 h-12 flex items-center justify-center rounded-full  from-amber-300 to-amber-400 text-gray-900 font-bold text-lg shadow-lg bg-amber-300">
+            <div className="relative z-10 w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center rounded-full bg-gradient-to-br from-amber-200 to-amber-300 text-gray-800 font-bold text-lg lg:text-xl shadow-lg">
                 {stepNumber}
             </div>
 
             {/* Content */}
-            <div className="flex-1 pb-8">
-                <h3 className="text-gray-900 text-lg font-bold mb-1 leading-tight">
+            <div className="flex-1 pb-6 lg:pb-12">
+                <h3 className="text-gray-800 text-base lg:text-lg font-bold mb-1 lg:mb-3 leading-tight">
                     {title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="p-heading-text text-sm lg:text-base">
                     {description}
                 </p>
             </div>
@@ -68,7 +68,7 @@ export function OurProcessTest() {
                     <div className="order-2 lg:order-1 w-full lg:w-1/2">
                         <InViewSection>
                             <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                                <div className="aspect-square lg:aspect-[4/3] relative">
+                                <div className="aspect-[4/3] lg:aspect-[3/4] xl:aspect-[4/3] relative">
                                     <Image
                                         src={"/assets/office-building.jpg"}
                                         alt="Electrical Process"
