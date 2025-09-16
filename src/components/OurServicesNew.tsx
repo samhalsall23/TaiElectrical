@@ -60,7 +60,7 @@ function ServiceCard({
 
 export function OurServicesNew() {
     return (
-        <section className="relative w-100 pt-8 bg-gray-50">
+        <section id="services" className="relative w-100 pt-8 bg-gray-50">
             {/* Curved transition from white to gray */}
             <div
                 className="absolute top-0 left-0 w-full h-16 bg-white"

@@ -35,7 +35,7 @@ export function ProjectsNew() {
 
     return (
         <>
-            <section className="bg-white py-12 md:py-16">
+            <section id="projects" className="bg-white py-12 md:py-16">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                         {/* Image Section */}

@@ -4,6 +4,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const buttonVariants = cva(
     "z-10 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
@@ -39,6 +40,7 @@ export interface ButtonProps
         VariantProps<typeof buttonVariants> {
     asChild?: boolean;
     hasArrow?: boolean;
+    buttonType?: "default" | "quote" | "services";
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
@@ -47,6 +49,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
             className,
             variant,
             size,
+            buttonType = "default",
             asChild = false,
             hasArrow = false,
             ...props
@@ -54,9 +57,23 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref
     ) => {
         const Comp = asChild ? Slot : "button";
+
+        const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+            if (props.onClick) {
+                return props.onClick(event);
+            }
+            if (buttonType === "quote") {
+                scrollToSection("contact");
+            }
+            if (buttonType === "services") {
+                scrollToSection("services");
+            }
+        };
+
         return (
             <Comp
                 className={cn(buttonVariants({ variant, size, className }))}
+                onClick={handleClick}
                 ref={ref}
                 {...props}>
                 {props.children}

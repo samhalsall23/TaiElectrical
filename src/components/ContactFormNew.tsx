@@ -73,7 +73,7 @@ export function ContactFormNew() {
 
     return (
         <>
-            <section className="bg-gray-100 w-full py-12 relative">
+            <section id="contact" className="bg-gray-100 w-full py-12 relative">
                 {/* Curved transition from white to gray */}
                 <div
                     className="absolute top-0 left-0 w-full h-1 bg-white"

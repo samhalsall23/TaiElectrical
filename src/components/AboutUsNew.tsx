@@ -21,7 +21,7 @@ export function AboutUsDotPoint({ text }: { text: string }) {
 
 export function AboutUsNew() {
     return (
-        <section className="py-16">
+        <section id="about" className="py-16">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
                     <div className="w-full lg:w-1/2 space-y-8">

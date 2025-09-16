@@ -1,14 +1,23 @@
+import { cn } from "@/lib/utils";
+
 type SlashHeaderProps = {
     text: string;
+    center?: boolean;
 };
 
-export function SlashHeader({ text }: SlashHeaderProps) {
+export function SlashHeader({ text, center = false }: SlashHeaderProps) {
+    const slashHeaderDivClass = cn([
+        "flex items-center",
+        center ? "justify-center lg:justify-start" : "justify-start",
+        "gap-2",
+    ]);
+
     return (
-        <div className="flex items-center justify-center lg:justify-start gap-2">
-            <h3 className="text-lg sm:text-xl lg:text-2xl text-yellow font-black">
+        <div className={slashHeaderDivClass}>
+            <h3 className="text-md sm:text-lg md:text-xl text-yellow font-black">
                 {"//"}
             </h3>
-            <h3 className="ps-2 text-lg sm:text-xl lg:text-2xl font-black text-zinc-800 tracking-wide">
+            <h3 className="ps-2 text-md sm:text-lg md:text-xl font-black text-zinc-800 tracking-wide">
                 {text}
             </h3>
         </div>

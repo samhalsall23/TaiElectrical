@@ -1,10 +1,18 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+
+import {
+    CALL_US_LINK,
+    NAVBAR_HEIGHT,
+    SITE_INSTAGRAM,
+    SITE_PHONE_NUMBER,
+} from "@/lib/constants";
 import { FaInstagram } from "react-icons/fa";
 import { FiPhone, FiMenu, FiX } from "react-icons/fi";
+import { scrollToSection } from "@/lib/scrollToSection";
 
 const Navbar: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -33,6 +41,11 @@ const Navbar: React.FC = () => {
         setIsMobileMenuOpen(false);
     };
 
+    const scrollToSectionAndCloseMenu = (id: string) => {
+        scrollToSection(id);
+        closeMobileMenu();
+    };
+
     const linkClass =
         "relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full";
 
@@ -50,7 +63,7 @@ const Navbar: React.FC = () => {
                         }
                         className="pt-1 flex items-center">
                         <Image
-                            src={"/assets/tai-electrical-logo.jpg"}
+                            src={"/assets/tai-electrical-logo.png"}
                             alt="Tai Electrical Logo"
                             width={100}
                             height={100}
@@ -59,24 +72,38 @@ const Navbar: React.FC = () => {
 
                     {/* Desktop Navigation */}
                     <div className="text-lg lg:text-xl 2xl:text-2xl font-medium space-x-6 lg:space-x-12 hidden md:flex">
-                        <Link href="#about" className={linkClass}>
+                        <button
+                            onClick={() => scrollToSectionAndCloseMenu("about")}
+                            className={linkClass}>
                             About
-                        </Link>
-                        <Link href="#services" className={linkClass}>
+                        </button>
+                        <button
+                            onClick={() =>
+                                scrollToSectionAndCloseMenu("services")
+                            }
+                            className={linkClass}>
                             Services
-                        </Link>
-                        <Link href="#projects" className={linkClass}>
+                        </button>
+                        <button
+                            onClick={() =>
+                                scrollToSectionAndCloseMenu("projects")
+                            }
+                            className={linkClass}>
                             Projects
-                        </Link>
-                        <Link href="#contact" className={linkClass}>
+                        </button>
+                        <button
+                            onClick={() =>
+                                scrollToSectionAndCloseMenu("contact")
+                            }
+                            className={linkClass}>
                             Contact
-                        </Link>
+                        </button>
                     </div>
 
                     {/* Desktop Social/Contact Links */}
                     <div className="hidden md:flex items-center space-x-2 lg:space-x-4">
                         <Link
-                            href="https://www.instagram.com"
+                            href={SITE_INSTAGRAM}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="group w-8 h-8 lg:w-10 lg:h-10 flex items-center justify-center border-2 border-yellow rounded-full hover:bg-yellow hover:text-white shadow-md hover:shadow-lg transition-all duration-150 hover:scale-110">
@@ -87,14 +114,14 @@ const Navbar: React.FC = () => {
                         </Link>
 
                         <Link
-                            href="tel:0444444444"
-                            className="group bg-yellow h-8 lg:h-10 px-2 lg:px-5 flex items-center justify-between rounded-full shadow-md hover:shadow-2xl transition-all duration-300">
+                            href={CALL_US_LINK}
+                            className="group bg-yellow h-8 lg:h-10 px-2 lg:px-5 flex items-center justify-between rounded-full shadow-md transition-all duration-300">
                             <FiPhone
                                 className="text-black self-center transition-transform duration-300 group-hover:translate-x-1"
                                 size={16}
                             />
                             <span className="text-black text-md lg:text-lg px-2 lg:px-3 py-1 lg:py-2">
-                                0463 932 842
+                                {SITE_PHONE_NUMBER}
                             </span>
                         </Link>
                     </div>
@@ -106,7 +133,7 @@ const Navbar: React.FC = () => {
                             className="bg-yellow h-8 px-3 flex items-center space-x-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
                             <FiPhone className="text-black" size={16} />
                             <span className="text-black text-sm font-medium">
-                                0463 932 842
+                                {SITE_PHONE_NUMBER}
                             </span>
                         </Link>
 
@@ -131,34 +158,38 @@ const Navbar: React.FC = () => {
                     />
                     <div className="absolute top-16 left-0 right-0 bg-gray-50 border-b border-gray-300 shadow-lg">
                         <div className="container mx-auto py-6 space-y-4">
-                            <Link
-                                href="#about"
-                                onClick={closeMobileMenu}
-                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2">
+                            <button
+                                onClick={() =>
+                                    scrollToSectionAndCloseMenu("about")
+                                }
+                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
                                 About
-                            </Link>
-                            <Link
-                                href="#services"
-                                onClick={closeMobileMenu}
-                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2">
+                            </button>
+                            <button
+                                onClick={() =>
+                                    scrollToSectionAndCloseMenu("services")
+                                }
+                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
                                 Services
-                            </Link>
-                            <Link
-                                href="#projects"
-                                onClick={closeMobileMenu}
-                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2">
+                            </button>
+                            <button
+                                onClick={() =>
+                                    scrollToSectionAndCloseMenu("projects")
+                                }
+                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
                                 Projects
-                            </Link>
-                            <Link
-                                href="#contact"
-                                onClick={closeMobileMenu}
-                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2">
+                            </button>
+                            <button
+                                onClick={() =>
+                                    scrollToSectionAndCloseMenu("contact")
+                                }
+                                className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
                                 Contact
-                            </Link>
+                            </button>
 
                             <div className="pt-4 border-t border-gray-300">
                                 <Link
-                                    href="https://www.instagram.com"
+                                    href={SITE_INSTAGRAM}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex ps-4 items-center space-x-3 text-lg font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2">

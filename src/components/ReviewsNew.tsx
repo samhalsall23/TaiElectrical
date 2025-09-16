@@ -10,7 +10,7 @@ export function ReviewsNew() {
                 <div className="space-y-6 lg:space-y-8">
                     <InViewSection className="space-y-6 lg:space-y-8">
                         <SlashHeader text="OUR CLIENTS"></SlashHeader>
-                        <h2 className="h2-heading-text text-center lg:text-left">
+                        <h2 className="h2-heading-text">
                             What our clients have to say about our services
                         </h2>
                     </InViewSection>
