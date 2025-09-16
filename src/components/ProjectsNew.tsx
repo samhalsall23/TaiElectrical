@@ -39,7 +39,7 @@ export function ProjectsNew() {
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                         {/* Image Section */}
-                        <div className="order-2 lg:order-1 w-full lg:w-1/2">
+                        <InViewSection className="order-2 lg:order-1 w-full lg:w-1/2">
                             <div className="max-w-2xl mx-auto lg:mx-0">
                                 <Carousel>
                                     <CarouselContent>
@@ -70,20 +70,20 @@ export function ProjectsNew() {
                                     </div>
                                 </Carousel>
                             </div>
-                        </div>
+                        </InViewSection>
 
                         {/* Content Section */}
                         <div className="order-1 lg:order-2 w-full lg:w-1/2 space-y-6 lg:space-y-8">
-                            <InViewSection className="space-y-6 lg:space-y-8 text-center lg:text-left">
+                            <InViewSection className="space-y-6 lg:space-y-8 text-left">
                                 <SlashHeader text="OUR WORK"></SlashHeader>
                                 <h2 className="h2-heading-text">
                                     View one of our latest projects
                                 </h2>
-                                <p className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-6">
+                                <p className="text-lg text-gray-600 leading-relaxed  mx-auto lg:mx-0 mb-6">
                                     Recent kitchen renovation featuring
                                     comprehensive electrical upgrades:
                                 </p>
-                                <ul className="space-y-1 max-w-2xl mx-auto lg:mx-0">
+                                <ul className="space-y-1 mx-auto lg:mx-0">
                                     <AboutUsDotPoint text="3x double power points installed for the benchtops" />
                                     <AboutUsDotPoint text="New power points for fridge, freezer, microwave, dishwasher, and cooktop" />
                                     <AboutUsDotPoint text="Power supply for the rangehood installation" />
