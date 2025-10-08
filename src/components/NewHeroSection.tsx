@@ -17,7 +17,7 @@ export function NewHeroSection() {
     return (
         <section className={heroSectionClasses}>
             {/* Left Side - Info */}
-            <div className="flex flex-col justify-center w-full lg:w-7/12 2xl:w-5/12 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-10 lg:py-0 order-2 lg:order-1">
+            <div className="flex flex-col justify-center w-full lg:w-1/2 2xl:w-5/12 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-10 lg:py-0 order-2 lg:order-1">
                 <div className="space-y-6 sm:space-y-8 lg:space-y-12 text-center lg:text-left">
                     {/* Small header */}
                     <InViewSection className="delay-100">
@@ -70,18 +70,20 @@ export function NewHeroSection() {
             </div>
 
             {/* Right Side - Image */}
-            <div className="w-full lg:w-7/12 2xl:5/12 relative order-1 lg:order-2">
-                <InViewSection className="delay-400">
-                    <div className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[calc(100vh-5rem)] w-full">
-                        <Image
-                            src={
-                                "/assets/happy-mechanic-standing-huge-lightbulb.png"
-                            }
-                            alt="Professional Electrician"
-                            fill
-                            className="object-contain lg:object-bottom object-center"
-                            priority
-                        />
+            <div className="w-full lg:w-1/2 2xl:w-7/12 relative order-1 lg:order-2 flex items-center justify-center">
+                <InViewSection className="delay-400 w-3/4">
+                    <div className="relative h-auto py-8 sm:py-12 md:py-16 lg:py-0 lg:h-[calc(100vh-5rem)] w-full flex items-center justify-center">
+                            <Image
+                                src={
+                                    "/assets/tai-electrical-logo.png"
+                                }
+                                alt="Professional Electrician"
+                                width={677}
+                                height={369}
+                                quality={100}
+                                className="w-3/5 lg:w-full h-auto object-contain max-w-[90%]"
+                                priority
+                            />
                     </div>
                 </InViewSection>
             </div>
