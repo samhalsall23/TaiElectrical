@@ -4,6 +4,7 @@ import "../globals.css";
 
 import { Footer } from "@/components/Footer";
 import NewNavbar from "@/components/NewNavbar";
+import { LogoVisibilityProvider } from "@/contexts/LogoVisibilityContext";
 
 // Load the Inter font
 const inter = Inter({
@@ -89,8 +90,10 @@ export default function RootLayout({
             <body
                 className={`${inter.variable} font-sans antialiased overflow-x-hidden`}>
                 {" "}
-                <NewNavbar />
-                {children}
+                <LogoVisibilityProvider>
+                    <NewNavbar />
+                    {children}
+                </LogoVisibilityProvider>
                 <Footer />
             </body>
         </html>

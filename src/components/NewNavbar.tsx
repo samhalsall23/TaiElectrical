@@ -12,26 +12,18 @@ import {
 import { FaInstagram } from "react-icons/fa";
 import { FiPhone, FiMenu, FiX } from "react-icons/fi";
 import { scrollToSection } from "@/lib/scrollToSection";
+import { useIsScrolled } from "@/hooks";
+import { useLogoVisibility } from "@/contexts/LogoVisibilityContext";
 
 const Navbar: React.FC = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
+    // === STATE ===
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
+    // === HOOKS ===
+    const isScrolled = useIsScrolled();
+    const { showLogo } = useLogoVisibility();
 
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
+    // === HANDLERS ===
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
     };
@@ -45,6 +37,7 @@ const Navbar: React.FC = () => {
         closeMobileMenu();
     };
 
+    // === UI CLASSES ===
     const linkClass =
         "relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full";
 
@@ -62,6 +55,9 @@ const Navbar: React.FC = () => {
                         }
                         className="pt-1 flex items-center">
                         <Image
+                            className={`${
+                                showLogo ? "" : "opacity-0"
+                            } transition-opacity duration-300`}
                             src={"/assets/tai-electrical-logo.png"}
                             alt="Tai Electrical Logo"
                             width={100}

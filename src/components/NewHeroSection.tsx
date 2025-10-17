@@ -1,10 +1,10 @@
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { InViewSection } from "./InViewSection";
 import { Button } from "./ui/button";
 import { SlashHeader } from "./SlashHeader";
 import { cn } from "@/lib/utils";
 import { NAVBAR_HEIGHT, QUOTE_BUTTON_TEXT } from "@/lib/constants";
+import { HeroImage } from "./HeroImage";
 
 export function NewHeroSection() {
     const heroSectionClasses = cn([
@@ -70,17 +70,7 @@ export function NewHeroSection() {
             {/* Right Side - Image */}
             <div className="w-full lg:w-1/2 2xl:w-7/12 relative order-1 lg:order-2 flex items-center justify-center">
                 <InViewSection className="delay-400 w-3/4">
-                    <div className="relative h-auto py-8 sm:py-12 md:py-16 lg:py-0 lg:h-[calc(100vh-5rem)] w-full flex items-center justify-center">
-                        <Image
-                            src={"/assets/tai-electrical-logo.png"}
-                            alt="Professional Electrician"
-                            width={677}
-                            height={369}
-                            quality={100}
-                            className="w-3/5 lg:w-full h-auto object-contain max-w-[90%]"
-                            priority
-                        />
-                    </div>
+                    <HeroImage />
                 </InViewSection>
             </div>
         </section>
