@@ -1,5 +1,3 @@
-"use client";
-
 import { ArrowRight } from "lucide-react";
 import { InViewSection } from "./InViewSection";
 import { Button } from "./ui/button";

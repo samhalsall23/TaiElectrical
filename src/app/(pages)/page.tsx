@@ -1,6 +1,6 @@
-"use client";
+// app/page.tsx
 
-import { LoadingOverlay } from "@/components";
+import LoadingWrapper from "@/components/LoadingWrapper";
 import { AboutUsNew } from "@/components/AboutUsNew";
 import { BelowHero } from "@/components/BelowHero";
 import { ContactFormNew } from "@/components/ContactFormNew";
@@ -10,41 +10,19 @@ import { OurProcessTest } from "@/components/OurProcessTest";
 import { OurServicesNew } from "@/components/OurServicesNew";
 import { ProjectsNew } from "@/components/ProjectsNew";
 import { ReviewsNew } from "@/components/ReviewsNew";
-import { useEffect, useState } from "react";
 
 export default function Home() {
-    const [visible, setVisible] = useState(false);
-    useEffect(() => {
-        const timeout = setTimeout(() => setVisible(true), 1800);
-        return () => clearTimeout(timeout);
-    }, []);
     return (
-        <>
-            <LoadingOverlay />
-
-            {visible && (
-                <>
-                    {/*New Version*/}
-                    <NewHeroSection />
-                    <BelowHero />
-                    <AboutUsNew />
-                    <OurProcessTest />
-                    <OurServicesNew />
-                    <ContactInfoDivider />
-                    <ReviewsNew />
-                    <ProjectsNew />
-                    <ContactFormNew />
-
-                    {/* <HeroSection /> */}
-                    {/* <HomePageServices /> */}
-                    {/* <AboutUs /> */}
-                    {/* <ProjectsSection /> */}
-                    {/* <div className="py-12 bg-gray-50"></div>
-                    <ReviewsSection /> */}
-                    {/* <GallerySection /> */}
-                    {/* <GetStarted /> */}
-                </>
-            )}
-        </>
+        <LoadingWrapper>
+            <NewHeroSection />
+            <BelowHero />
+            <AboutUsNew />
+            <OurProcessTest />
+            <OurServicesNew />
+            <ContactInfoDivider />
+            <ReviewsNew />
+            <ProjectsNew />
+            <ContactFormNew />
+        </LoadingWrapper>
     );
 }
