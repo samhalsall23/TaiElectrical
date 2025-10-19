@@ -1,12 +1,10 @@
-"use client";
-
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { InViewSection } from "./InViewSection";
 import { Button } from "./ui/button";
 import { SlashHeader } from "./SlashHeader";
 import { cn } from "@/lib/utils";
 import { NAVBAR_HEIGHT, QUOTE_BUTTON_TEXT } from "@/lib/constants";
+import { HeroImage } from "./HeroImage";
 
 export function NewHeroSection() {
     const heroSectionClasses = cn([
@@ -17,7 +15,7 @@ export function NewHeroSection() {
     return (
         <section className={heroSectionClasses}>
             {/* Left Side - Info */}
-            <div className="flex flex-col justify-center w-full lg:w-7/12 2xl:w-5/12 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-10 lg:py-0 order-2 lg:order-1">
+            <div className="flex flex-col justify-center w-full lg:w-1/2 2xl:w-5/12 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-10 lg:py-0 order-2 lg:order-1">
                 <div className="space-y-6 sm:space-y-8 lg:space-y-12 text-center lg:text-left">
                     {/* Small header */}
                     <InViewSection className="delay-100">
@@ -70,19 +68,9 @@ export function NewHeroSection() {
             </div>
 
             {/* Right Side - Image */}
-            <div className="w-full lg:w-7/12 2xl:5/12 relative order-1 lg:order-2">
-                <InViewSection className="delay-400">
-                    <div className="relative h-[40vh] sm:h-[50vh] md:h-[60vh] lg:h-[calc(100vh-5rem)] w-full">
-                        <Image
-                            src={
-                                "/assets/happy-mechanic-standing-huge-lightbulb.png"
-                            }
-                            alt="Professional Electrician"
-                            fill
-                            className="object-contain lg:object-bottom object-center"
-                            priority
-                        />
-                    </div>
+            <div className="w-full lg:w-1/2 2xl:w-7/12 relative order-1 lg:order-2 flex items-center justify-center">
+                <InViewSection className="delay-400 w-3/4">
+                    <HeroImage />
                 </InViewSection>
             </div>
         </section>

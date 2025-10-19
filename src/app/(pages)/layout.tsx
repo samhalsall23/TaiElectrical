@@ -4,6 +4,7 @@ import "../globals.css";
 
 import { Footer } from "@/components/Footer";
 import NewNavbar from "@/components/NewNavbar";
+import { LogoVisibilityProvider } from "@/contexts/LogoVisibilityContext";
 
 // Load the Inter font
 const inter = Inter({
@@ -35,6 +36,24 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "/",
     },
+    icons: {
+        icon: [
+            { url: "/favicon.ico", sizes: "32x32" },
+            {
+                url: "/assets/tai-electrical-logo.png",
+                sizes: "192x192",
+                type: "image/png",
+            },
+        ],
+        apple: [
+            {
+                url: "/assets/tai-electrical-logo.png",
+                sizes: "180x180",
+                type: "image/png",
+            },
+        ],
+        shortcut: "/favicon.ico",
+    },
     openGraph: {
         title: "Tai Electrical | Professional Electrical Services Melbourne",
         description:
@@ -43,7 +62,7 @@ export const metadata: Metadata = {
         siteName: "Tai Electrical",
         images: [
             {
-                url: "/assets/tai-electrical-logo.jpg",
+                url: "/assets/tai-electrical-logo-og.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Tai Electrical - Professional Electrical Services Melbourne",
@@ -57,7 +76,7 @@ export const metadata: Metadata = {
         title: "Tai Electrical | Professional Electrical Services Melbourne",
         description:
             "Professional electrical services for homes and businesses in Melbourne. Licensed electricians offering installations, repairs, maintenance, and emergency services.",
-        images: ["/assets/tai-electrical-logo.jpg"],
+        images: ["/assets/tai-electrical-logo-og.jpg"],
         // creator: "@taielectrical", // Replace with your actual Twitter handle if you have one
     },
     robots: {
@@ -89,8 +108,10 @@ export default function RootLayout({
             <body
                 className={`${inter.variable} font-sans antialiased overflow-x-hidden`}>
                 {" "}
-                <NewNavbar />
-                {children}
+                <LogoVisibilityProvider>
+                    <NewNavbar />
+                    {children}
+                </LogoVisibilityProvider>
                 <Footer />
             </body>
         </html>
