@@ -1,4 +1,8 @@
-import { QUOTE_BUTTON_TEXT } from "@/lib/constants";
+import {
+    QUOTE_BUTTON_TEXT,
+    SITE_EMAIL_ADDRESS,
+    SITE_PHONE_NUMBER,
+} from "@/lib/constants";
 import { InViewSection } from "./InViewSection";
 import { Button } from "./ui/button";
 
@@ -35,12 +39,12 @@ export function ContactInfoDivider() {
                 </div>
                 <div className="space-y-8 md:w-4/12 flex flex-col">
                     <InViewSection>
-                        <ContactCard title="Call Us" text={"0456 365 633"} />
+                        <ContactCard title="Call Us" text={SITE_PHONE_NUMBER} />
                     </InViewSection>
                     <InViewSection>
                         <ContactCard
                             title="Email Us"
-                            text={"info@example.com"}
+                            text={SITE_EMAIL_ADDRESS}
                         />
                     </InViewSection>
                 </div>
