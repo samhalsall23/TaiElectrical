@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,6 +14,8 @@ import { FiPhone, FiMenu, FiX } from "react-icons/fi";
 import { scrollToSection } from "@/lib/scrollToSection";
 import { useIsScrolled } from "@/hooks";
 import { useLogoVisibility } from "@/contexts/LogoVisibilityContext";
+import { useActiveSection } from "@/hooks/useActiveSection";
+import { useMobileMenuResize } from "@/hooks/useMobileMenuResize";
 
 const Navbar: React.FC = () => {
     // === STATE ===
@@ -22,14 +24,25 @@ const Navbar: React.FC = () => {
     // === HOOKS ===
     const isScrolled = useIsScrolled();
     const { showLogo } = useLogoVisibility();
+    const activeSection = useActiveSection();
+
+    useMobileMenuResize({
+        isMobileMenuOpen,
+        setIsMobileMenuOpen,
+    });
 
     // === HANDLERS ===
     const toggleMobileMenu = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen);
+        const newState = !isMobileMenuOpen;
+        setIsMobileMenuOpen(newState);
+
+        document.body.style.overflow = newState ? "hidden" : "unset";
     };
 
     const closeMobileMenu = () => {
         setIsMobileMenuOpen(false);
+
+        document.body.style.overflow = "unset";
     };
 
     const scrollToSectionAndCloseMenu = (id: string) => {
@@ -40,6 +53,20 @@ const Navbar: React.FC = () => {
     // === UI CLASSES ===
     const linkClass =
         "relative hover:text-yellow transition-colors duration-300 after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-yellow after:left-0 after:bottom-[-4px] after:transition-all after:duration-300 hover:after:w-full";
+
+    const getLinkClass = (sectionId: string) => {
+        const isActive = activeSection === sectionId;
+        return `${linkClass} ${isActive ? "text-yellow after:w-full" : ""}`;
+    };
+
+    const getMobileLinkClass = (sectionId: string) => {
+        const isActive = activeSection === sectionId;
+        const baseClass =
+            "block ps-4 text-xl font-medium transition-colors duration-300 py-2 text-left w-full";
+        return `${baseClass} ${
+            isActive ? "text-yellow" : "text-zinc-800 hover:text-yellow"
+        }`;
+    };
 
     return (
         <>
@@ -67,32 +94,42 @@ const Navbar: React.FC = () => {
 
                     {/* Desktop Navigation */}
                     <div className="text-lg lg:text-xl 2xl:text-2xl font-medium space-x-6 lg:space-x-12 hidden md:flex">
-                        <button
-                            onClick={() => scrollToSectionAndCloseMenu("about")}
-                            className={linkClass}>
+                        <a
+                            href="#about"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSectionAndCloseMenu("about");
+                            }}
+                            className={getLinkClass("about")}>
                             About
-                        </button>
-                        <button
-                            onClick={() =>
-                                scrollToSectionAndCloseMenu("services")
-                            }
-                            className={linkClass}>
+                        </a>
+                        <a
+                            href="#services"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSectionAndCloseMenu("services");
+                            }}
+                            className={getLinkClass("services")}>
                             Services
-                        </button>
-                        <button
-                            onClick={() =>
-                                scrollToSectionAndCloseMenu("projects")
-                            }
-                            className={linkClass}>
+                        </a>
+                        <a
+                            href="#projects"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSectionAndCloseMenu("projects");
+                            }}
+                            className={getLinkClass("projects")}>
                             Projects
-                        </button>
-                        <button
-                            onClick={() =>
-                                scrollToSectionAndCloseMenu("contact")
-                            }
-                            className={linkClass}>
+                        </a>
+                        <a
+                            href="#contact"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSectionAndCloseMenu("contact");
+                            }}
+                            className={getLinkClass("contact")}>
                             Contact
-                        </button>
+                        </a>
                     </div>
 
                     {/* Desktop Social/Contact Links */}
@@ -124,7 +161,7 @@ const Navbar: React.FC = () => {
                     {/* Mobile Menu Button and Phone */}
                     <div className="flex items-center space-x-2 md:hidden">
                         <Link
-                            href="tel:0444444444"
+                            href={`tel:${SITE_PHONE_NUMBER}`}
                             className="bg-yellow h-8 px-3 flex items-center space-x-2 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
                             <FiPhone className="text-black" size={16} />
                             <span className="text-black text-sm font-medium">
@@ -168,32 +205,42 @@ const Navbar: React.FC = () => {
                             : "-translate-y-full opacity-0"
                     }`}>
                     <div className="container mx-auto py-6 space-y-4">
-                        <button
-                            onClick={() => scrollToSectionAndCloseMenu("about")}
-                            className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
+                        <a
+                            href="#about"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSectionAndCloseMenu("about");
+                            }}
+                            className={getMobileLinkClass("about")}>
                             About
-                        </button>
-                        <button
-                            onClick={() =>
-                                scrollToSectionAndCloseMenu("services")
-                            }
-                            className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
+                        </a>
+                        <a
+                            href="#services"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSectionAndCloseMenu("services");
+                            }}
+                            className={getMobileLinkClass("services")}>
                             Services
-                        </button>
-                        <button
-                            onClick={() =>
-                                scrollToSectionAndCloseMenu("projects")
-                            }
-                            className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
+                        </a>
+                        <a
+                            href="#projects"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSectionAndCloseMenu("projects");
+                            }}
+                            className={getMobileLinkClass("projects")}>
                             Projects
-                        </button>
-                        <button
-                            onClick={() =>
-                                scrollToSectionAndCloseMenu("contact")
-                            }
-                            className="block ps-4 text-xl font-medium text-zinc-800 hover:text-yellow transition-colors duration-300 py-2 text-left w-full">
+                        </a>
+                        <a
+                            href="#contact"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                scrollToSectionAndCloseMenu("contact");
+                            }}
+                            className={getMobileLinkClass("contact")}>
                             Contact
-                        </button>
+                        </a>
 
                         <div className="pt-4 border-t border-gray-300">
                             <Link

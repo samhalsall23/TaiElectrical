@@ -9,6 +9,7 @@ export function useIsScrolled(): boolean {
         };
 
         window.addEventListener("scroll", handleScroll);
+
         handleScroll();
 
         return () => {

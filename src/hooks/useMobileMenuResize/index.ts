@@ -1,0 +1,1 @@
+export { useMobileMenuResize } from "./useMobileMenuResize";
