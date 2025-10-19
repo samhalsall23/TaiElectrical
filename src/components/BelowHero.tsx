@@ -45,7 +45,7 @@ export function BelowHero() {
     return (
         <section className="lg:flex justify-between items-center">
             <div className="md:order-2 w-full lg:w-2/5 2xl:w-1/2">
-                <div className="bg-orange-200 bg-opacity-75 w-full lg:w-3/4 rounded-b-lg p-12 m-0 lg:m-8 lg:mt-0">
+                <div className="bg-orange-200 bg-opacity-75 w-full lg:w-3/4 rounded-sm p-12 m-0 lg:m-8 lg:mt-0">
                     <InViewSection>
                         <h2 className="text-2xl sm:text-3xl md:text-2xl  xl:text-3xl 2xl:text-4xl text-zinc-800 font-medium mb-4 flex-wrap">
                             Get in touch with our skilled electricians today!

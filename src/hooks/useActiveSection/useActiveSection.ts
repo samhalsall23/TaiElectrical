@@ -18,7 +18,9 @@ export function useActiveSection() {
                     const rect = el.getBoundingClientRect();
                     const distanceFromTop = Math.abs(rect.top);
 
-                    const activeThreshold = window.innerHeight * 0.8;
+                    const PERCENT_FROM_TOP = 0.3;
+                    const activeThreshold =
+                        window.innerHeight * PERCENT_FROM_TOP;
 
                     if (rect.top <= activeThreshold && rect.bottom >= 0) {
                         if (distanceFromTop < minDistanceFromTop) {
@@ -29,27 +31,23 @@ export function useActiveSection() {
                 }
             });
 
-            // Only update if we found a section, otherwise keep the previous active section
-            if (currentSection !== null) {
+            const scrollTop = window.scrollY;
+            const windowHeight = window.innerHeight;
+            const docHeight = document.documentElement.scrollHeight;
+
+            const isAtBottom =
+                scrollTop > 0 &&
+                docHeight > windowHeight &&
+                Math.ceil(scrollTop + windowHeight) >= docHeight;
+
+            if (isAtBottom) {
+                setActiveSection("contact");
+            } else if (currentSection !== null) {
                 setActiveSection(currentSection);
-            }
-            // If no section is found and we haven't set an active section yet, 
-            // check if we're past all sections and set the last one as active
-            else if (currentSection === null) {
-                // Check if we've scrolled past all sections
-                const lastSection = document.getElementById(SECTION_IDS[SECTION_IDS.length - 1]);
-                if (lastSection) {
-                    const lastRect = lastSection.getBoundingClientRect();
-                    // If the last section is above the viewport, keep it as active
-                    if (lastRect.bottom < 0) {
-                        setActiveSection(SECTION_IDS[SECTION_IDS.length - 1]);
-                    }
-                }
             }
         };
 
         window.addEventListener("scroll", handleScroll, { passive: true });
-        handleScroll();
 
         return () => {
             window.removeEventListener("scroll", handleScroll);

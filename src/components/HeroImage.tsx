@@ -8,11 +8,12 @@ import { useEffect, useRef } from "react";
 export function HeroImage() {
     const imageRef = useRef<HTMLImageElement | null>(null);
     const isImageInView = useInView(imageRef);
-    const { setShowLogo } = useLogoVisibility();
+    const { setShowLogo, setIsReady } = useLogoVisibility();
 
     useEffect(() => {
         setShowLogo(!isImageInView);
-    }, [isImageInView, setShowLogo]);
+        setIsReady(true);
+    }, [isImageInView, setShowLogo, setIsReady]);
 
     return (
         <div className="relative h-auto py-8 sm:py-12 md:py-16 lg:py-0 lg:h-[calc(100vh-5rem)] w-full flex items-center justify-center">

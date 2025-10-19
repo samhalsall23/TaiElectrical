@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
 
     // === HOOKS ===
     const isScrolled = useIsScrolled();
-    const { showLogo } = useLogoVisibility();
+    const { showLogo, isReady } = useLogoVisibility();
     const activeSection = useActiveSection();
 
     useMobileMenuResize({
@@ -82,9 +82,11 @@ const Navbar: React.FC = () => {
                         }
                         className="pt-1 flex items-center">
                         <Image
-                            className={`${
-                                showLogo ? "" : "opacity-0"
-                            } transition-opacity duration-300`}
+                            className={`transition-opacity duration-300 ${
+                                isReady && showLogo
+                                    ? "opacity-100"
+                                    : "opacity-0"
+                            }`}
                             src={"/assets/tai-electrical-logo.png"}
                             alt="Tai Electrical Logo"
                             width={100}

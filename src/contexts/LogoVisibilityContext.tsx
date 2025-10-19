@@ -6,6 +6,8 @@ import { createContext, useContext, useState } from "react";
 type LogoVisibilityContextType = {
     showLogo: boolean;
     setShowLogo: (visible: boolean) => void;
+    isReady: boolean;
+    setIsReady: (ready: boolean) => void;
 };
 
 const LogoVisibilityContext = createContext<
@@ -18,9 +20,11 @@ export const LogoVisibilityProvider = ({
     children: React.ReactNode;
 }) => {
     const [showLogo, setShowLogo] = useState(false);
+    const [isReady, setIsReady] = useState(false);
 
     return (
-        <LogoVisibilityContext.Provider value={{ showLogo, setShowLogo }}>
+        <LogoVisibilityContext.Provider
+            value={{ showLogo, setShowLogo, isReady, setIsReady }}>
             {children}
         </LogoVisibilityContext.Provider>
     );
