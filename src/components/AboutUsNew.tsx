@@ -28,7 +28,7 @@ export function AboutUsNew() {
                         <InViewSection className="space-y-8">
                             <SlashHeader text="WHO WE ARE" />
                             <h2 className="h2-heading-text">
-                                Over 10 years of experience in the field
+                                Over 6 years of experience in the field
                             </h2>
                             <p className="p-heading-text">
                                 We are committed to providing high-quality
