@@ -6,4 +6,7 @@ export const QUOTE_BUTTON_TEXT = "Get a Quote";
 export const VIEW_SERVICES_TEXT = "View Services";
 export const CALL_US_LINK = `tel:${SITE_PHONE_NUMBER.replace(/\s+/g, "")}`;
 
-export const NAVBAR_HEIGHT = 80; // in pixels, adjust as needed
+export const NAVBAR_HEIGHT = 80;
+
+export const ABN_NUMBER = "21710191697";
+export const REC_NUMBER = "35937";

@@ -90,11 +90,6 @@ export const metadata: Metadata = {
             "max-snippet": -1,
         },
     },
-    verification: {
-        // google: "your-google-verification-code", // Add your Google Search Console verification code
-        // yandex: "your-yandex-verification-code", // If you use Yandex
-        // yahoo: "your-yahoo-verification-code", // If you use Yahoo
-    },
     category: "Electrical Services",
 };
 
