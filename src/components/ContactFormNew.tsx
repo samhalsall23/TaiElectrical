@@ -209,7 +209,9 @@ export function ContactFormNew() {
                                 <div className="relative rounded-2xl overflow-hidden shadow-xl">
                                     <div className="aspect-[4/3] sm:aspect-[5/3] lg:aspect-square relative">
                                         <Image
-                                            src={"/assets/hero-image2.jpg"}
+                                            src={
+                                                "/assets/electrician-construction-worker-with-beard-overalls-installation-sockets-home-renovation-concept.jpg"
+                                            }
                                             alt="Electrical Process"
                                             fill
                                             className="object-cover"
