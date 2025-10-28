@@ -8,3 +8,5 @@ export * from "./ReviewsSection";
 export * from "./ProjectsSection";
 export * from "./GallerySection";
 export * from "./LoadingOverlay";
+export * from "./SingleImageModal";
+export * from "./PixieCertification";

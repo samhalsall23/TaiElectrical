@@ -12,27 +12,20 @@ import { InViewSection } from "./InViewSection";
 import { SlashHeader } from "./SlashHeader";
 import { AboutUsDotPoint } from "./AboutUsNew";
 import { useState } from "react";
-import { X } from "lucide-react";
+import { SingleImageModal } from "./SingleImageModal";
 
 export function ProjectsNew() {
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState<string>("");
-    const [imageLoading, setImageLoading] = useState(false);
 
     const openModal = (imageSrc: string) => {
         setSelectedImage(imageSrc);
-        setImageLoading(true);
         setModalOpen(true);
     };
 
     const closeModal = () => {
         setModalOpen(false);
         setSelectedImage("");
-        setImageLoading(false);
-    };
-
-    const handleImageLoad = () => {
-        setImageLoading(false);
     };
 
     return (
@@ -100,40 +93,13 @@ export function ProjectsNew() {
                 </div>
             </section>
 
-            {/* Fullscreen Modal */}
-            {modalOpen && (
-                <div
-                    className="fixed inset-0 bg-gray-950 bg-opacity-90 z-50 flex items-center justify-center p-4 animate-in fade-in duration-300"
-                    onClick={closeModal}>
-                    <div className="relative max-w-7xl max-h-full w-full h-full flex items-center justify-center">
-                        <button
-                            onClick={closeModal}
-                            className="absolute top-4 right-4 z-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full p-2 transition-all animate-in slide-in-from-top-2 duration-500">
-                            <X className="w-6 h-6 text-white" />
-                        </button>
-                        <div
-                            className="relative w-full h-full max-w-6xl max-h-[90vh] animate-in zoom-in-50 duration-500 ease-out"
-                            onClick={(e) => e.stopPropagation()}>
-                            {/* Loading spinner */}
-                            {imageLoading && (
-                                <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className="w-12 h-12 border-4 border-white border-t-transparent rounded-full animate-spin"></div>
-                                </div>
-                            )}
-                            <Image
-                                src={selectedImage}
-                                alt="Project Detail"
-                                fill
-                                className={`object-contain transition-opacity duration-300 ${
-                                    imageLoading ? "opacity-0" : "opacity-100"
-                                }`}
-                                quality={100}
-                                onLoad={handleImageLoad}
-                            />
-                        </div>
-                    </div>
-                </div>
-            )}
+            {/* Single Image Modal */}
+            <SingleImageModal
+                isOpen={modalOpen}
+                imageSrc={selectedImage}
+                imageAlt="Project Detail"
+                onClose={closeModal}
+            />
         </>
     );
 }

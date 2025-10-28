@@ -3,18 +3,19 @@ import Image from "next/image";
 import { SlashHeader } from "./SlashHeader";
 import IconSquare from "./icons/IconSquare";
 import { InViewSection } from "./InViewSection";
+import { PixieCertification } from "./PixieCertificationServer";
 
-const aboutUsDotPoints = [
-    "Residental, Commercial, Industrial Services",
-    "24/7 Emergency Services Available",
-    "Free Consultations and Estimates",
-];
-
-export function AboutUsDotPoint({ text }: { text: string }) {
+export function AboutUsDotPoint({
+    text,
+    children,
+}: {
+    text?: string;
+    children?: React.ReactNode;
+}) {
     return (
         <li className="text-zinc-600 flex items-center gap-3 py-2 ms-4">
             <IconSquare icon="check" size="md" />
-            <p className="text-base leading-relaxed">{text}</p>
+            <div className="text-base leading-relaxed">{children || text}</div>
         </li>
     );
 }
@@ -40,9 +41,11 @@ export function AboutUsNew() {
                         </InViewSection>
                         <InViewSection>
                             <ul className="space-y-1">
-                                {aboutUsDotPoints.map((point, index) => (
-                                    <AboutUsDotPoint text={point} key={index} />
-                                ))}
+                                <AboutUsDotPoint text="Residental, Commercial, Industrial Services" />
+                                <AboutUsDotPoint text="Free Consultations and Estimates" />
+                                <AboutUsDotPoint>
+                                    <PixieCertification certificateImageSrc="/assets/pixie-smart-home-certificate.jpg" />
+                                </AboutUsDotPoint>
                             </ul>
                         </InViewSection>
                     </div>
