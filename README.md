@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TAI Electrical — Production Website
 
-## Getting Started
+A production marketing website for **TAI Electrical**, a Melbourne-based electrician business offering residential, commercial, and industrial electrical services. The site is a single-page application with animated sections covering the company's services, process, past projects, live Google Reviews, and a contact/quote form.
+Live at **https://taielectrical.com.au**
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features
+
+-   **Google Reviews integration** — live customer reviews rendered as an auto-scrolling carousel
+-   **Contact / quote form** — validated, secure submission workflow
+-   **Services section** — emergency callouts, general electrical, lighting, data cabling, installations, renovations
+-   **Our Process section** — three-step visual timeline
+-   **About Us** — company background and certification modal
+-   **Projects gallery** — image gallery with full-screen modal
+-   **Scroll-triggered animations** throughout the page
+-   **Loading overlay** on initial load
+-   **Fully responsive** mobile-first layout
+
+---
+
+## Tech Stack
+
+| Area       | Choice                  | Notes                                 |
+| ---------- | ----------------------- | ------------------------------------- |
+| Framework  | Next.js 14 (App Router) | Server Actions used for form handling |
+| Language   | TypeScript              |                                       |
+| Styling    | Tailwind CSS            | tailwind-merge + tailwindcss-animate  |
+| Animations | Framer Motion           | Scroll-triggered `InViewSection`      |
+| UI         | shadcn/ui (Radix UI)    | Buttons, inputs, dialog, carousel     |
+| Forms      | react-hook-form + zod   | Client validation before submission   |
+| Email      | nodemailer              | Gmail SMTP transport                  |
+| Reviews    | react-google-reviews    | Featurable widget integration         |
+
+---
+
+## Key Implementations
+
+### Contact Form
+
+Submissions are handled end-to-end through a **Next.js Server Action** (`src/app/actions/sendEmail.ts`):
+
+1. User enters name, email, phone, message
+2. Client validation via `react-hook-form` + `zod`
+3. Server Action creates `nodemailer` transporter
+4. Email sent via Gmail SMTP (`smtp.gmail.com`, port 465, SSL) using environment credentials
+5. Success → confirmation message
+   Failure → error + fallback phone contact
+
+Environment variables required:
+
+```
+AUTH_EMAIL=
+APP_PASSWORD=
+EMAIL_TO=
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Business constants (phone, email, ABN, licence, etc.) are stored in:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+src/lib/constants.ts
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+### Google Reviews
 
-To learn more about Next.js, take a look at the following resources:
+The reviews section uses a **Featurable widget ID** hardcoded in:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+src/components/Reviews.tsx
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+-   No API key required
+-   No backend polling
+-   Updates managed entirely in the Featurable dashboard
 
-## Deploy on Vercel
+To change displayed reviews or styling, update widget settings in Featurable — no code changes needed.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Development
+
+Install and run locally:
+
+```
+nvm install
+nvm use
+npm install
+npm run dev
+```
+
+Create a `.env.local` file in the project root:
+
+```
+AUTH_EMAIL=
+APP_PASSWORD=
+EMAIL_TO=
+```
+
+---
+
+## Deployment
+
+The site is deployed on **Vercel**.
+
+-   Pushes to `main` trigger automatic deployments
+-   Environment variables must be configured in
+    **Project Settings → Environment Variables**
+
+---
+
+## Future Improvements
+
+-   Replace placeholder stock imagery with branded project photography
+-   Add Instagram feed integration to showcase recent work
+-   Introduce automated testing (unit + integration)
+-   Implement Storybook for isolated component development and UI consistency
+
+---
