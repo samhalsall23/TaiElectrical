@@ -1,11 +1,10 @@
-// components/LoadingWrapper.tsx
 "use client";
 
 import { useEffect, useState } from "react";
-import { LoadingOverlay } from "@/components";
+import { LoadingOverlay } from "./LoadingOverlay";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function LoadingWrapper({
+export function LoadingWrapper({
     children,
 }: {
     children: React.ReactNode;

@@ -3,8 +3,8 @@ import {
     SITE_EMAIL_ADDRESS,
     SITE_PHONE_NUMBER,
 } from "@/lib/constants";
-import { InViewSection } from "./InViewSection";
-import { Button } from "./ui/button";
+import { InViewSection } from "@/components/shared";
+import { Button } from "@/components/ui";
 
 function ContactCard({ title, text }: { title: string; text: string }) {
     return (

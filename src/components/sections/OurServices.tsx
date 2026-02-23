@@ -1,41 +1,7 @@
-import { QUOTE_BUTTON_TEXT } from "@/lib/constants";
-import IconSquare, { IconSquareIconType } from "./icons/IconSquare";
-import { InViewSection } from "./InViewSection";
-import { SlashHeader } from "./SlashHeader";
-import { Button } from "./ui/button";
-
-const services = [
-    {
-        icon: "van",
-        title: "24/7 Emergency Service",
-        text: "We offer a wide range of residential electrical services, including installations, repairs, and maintenance.",
-    },
-    {
-        icon: "tools",
-        title: "General Electrical Work",
-        text: "Our team is equipped to handle all your commercial electrical needs, from wiring to lighting solutions.",
-    },
-    {
-        icon: "light-bulb",
-        title: "Lighting",
-        text: "We specialize in industrial electrical services, ensuring safety and efficiency in your operations.",
-    },
-    {
-        icon: "cable",
-        title: "Data Cabling & Communications",
-        text: "Structured cabling and network setup for homes and businesses.",
-    },
-    {
-        icon: "screwdriver",
-        title: "Appliance Installations",
-        text: "Efficient and safe installation of ovens, cooktops, and more.",
-    },
-    {
-        icon: "home",
-        title: "Renovations",
-        text: "Electrical upgrades for your home improvement projects.",
-    },
-];
+import { QUOTE_BUTTON_TEXT, SERVICES } from "@/lib/constants";
+import { IconSquare, IconSquareIconType } from "@/components/icons";
+import { InViewSection, SlashHeader } from "@/components/shared";
+import { Button } from "@/components/ui";
 
 function ServiceCard({
     title,
@@ -59,7 +25,7 @@ function ServiceCard({
     );
 }
 
-export function OurServicesNew() {
+export function OurServices() {
     return (
         <section id="services" className="relative w-100 pt-8 bg-gray-50">
             {/* Curved transition from white to gray */}
@@ -96,7 +62,7 @@ export function OurServicesNew() {
                 </InViewSection>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pb-10 pt-2">
-                    {services.map((service, index) => (
+                    {SERVICES.map((service, index) => (
                         <InViewSection
                             key={index}
                             className={`delay-[${(index + 1) * 100}ms]`}>

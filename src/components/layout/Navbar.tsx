@@ -17,7 +17,7 @@ import { useLogoVisibility } from "@/contexts/LogoVisibilityContext";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { useMobileMenuResize } from "@/hooks/useMobileMenuResize";
 
-const Navbar: React.FC = () => {
+export const Navbar: React.FC = () => {
     // === STATE ===
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -260,5 +260,3 @@ const Navbar: React.FC = () => {
         </>
     );
 };
-
-export default Navbar;

@@ -1,9 +1,10 @@
 "use client";
 
-import { useLogoVisibility } from "@/contexts/LogoVisibilityContext";
 import { useInView } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+
+import { useLogoVisibility } from "@/contexts/LogoVisibilityContext";
 
 export function HeroImage() {
     const imageRef = useRef<HTMLImageElement | null>(null);

@@ -1,12 +1,12 @@
 import { ArrowRight } from "lucide-react";
-import { InViewSection } from "./InViewSection";
-import { Button } from "./ui/button";
-import { SlashHeader } from "./SlashHeader";
+
+import { InViewSection, SlashHeader } from "@/components/shared";
+import { Button } from "@/components/ui";
 import { cn } from "@/lib/utils";
 import { NAVBAR_HEIGHT, QUOTE_BUTTON_TEXT } from "@/lib/constants";
 import { HeroImage } from "./HeroImage";
 
-export function NewHeroSection() {
+export function HeroSection() {
     const heroSectionClasses = cn([
         "relative overflow-x-clip min-h-[calc(100vh-5rem)] flex flex-col lg:flex-row items-center bg-gradient-to-b from-gray-50 to-white",
         `min-h-[calc(100vh-${NAVBAR_HEIGHT}px)]`,

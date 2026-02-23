@@ -14,10 +14,10 @@ export function SlashHeader({ text, center = false }: SlashHeaderProps) {
 
     return (
         <div className={slashHeaderDivClass}>
-            <h3 className="text-md sm:text-lg md:text-xl text-yellow font-black">
+            <h3 className="text-md sm:text-lg md:text-lg text-yellow font-semibold">
                 {"//"}
             </h3>
-            <h3 className="ps-2 text-md sm:text-lg md:text-xl font-black text-zinc-800 tracking-wide">
+            <h3 className="ps-2 text-md sm:text-lg md:text-lg font-semibold text-zinc-600 tracking-wide">
                 {text}
             </h3>
         </div>

@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { AlertDialog, AlertDialogContent } from "./ui/alert-dialog";
-import { Button } from "./ui/button";
+
+import { AlertDialog, AlertDialogContent, Button } from "@/components/ui";
 
 interface PixieCertificationClientProps {
     certificateImageSrc: string;

@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
 
-import { Footer } from "@/components/Footer";
-import NewNavbar from "@/components/NewNavbar";
+import { Footer, Navbar } from "@/components/layout";
 import { LogoVisibilityProvider } from "@/contexts/LogoVisibilityContext";
 
 // Load the Inter font
@@ -104,7 +103,7 @@ export default function RootLayout({
                 className={`${inter.variable} font-sans antialiased overflow-x-hidden`}>
                 {" "}
                 <LogoVisibilityProvider>
-                    <NewNavbar />
+                    <Navbar />
                     {children}
                 </LogoVisibilityProvider>
                 <Footer />

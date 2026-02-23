@@ -6,18 +6,22 @@ import {
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
-} from "./ui/carousel";
+} from "@/components/ui/carousel";
 import Image from "next/image";
-import { InViewSection } from "./InViewSection";
-import { SlashHeader } from "./SlashHeader";
-import { AboutUsDotPoint } from "./AboutUsNew";
+import {
+    InViewSection,
+    SlashHeader,
+    SingleImageModal,
+} from "@/components/shared";
+import { AboutUsDotPoint } from "./AboutUs";
 import { useState } from "react";
-import { SingleImageModal } from "./SingleImageModal";
 
-export function ProjectsNew() {
+export function Projects() {
+    // === STATE ===
     const [modalOpen, setModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState<string>("");
 
+    // === FUNCTIONS ===
     const openModal = (imageSrc: string) => {
         setSelectedImage(imageSrc);
         setModalOpen(true);

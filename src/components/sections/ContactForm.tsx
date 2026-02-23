@@ -5,14 +5,11 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import Image from "next/image";
 
-import { SlashHeader } from "./SlashHeader";
+import { SlashHeader, InViewSection } from "@/components/shared";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { sendEmail } from "@/app/actions/sendEmail";
-import { Button } from "./ui/button";
-import { TextArea } from "./ui/textarea";
+import { Button, TextArea, Input } from "@/components/ui";
 import { cn } from "@/lib/utils";
-import { InViewSection } from "./InViewSection";
-import { Input } from "./ui/input";
 import { SITE_PHONE_NUMBER } from "@/lib/constants";
 
 const errorClass = cn("text-red-600 text-sm font-semibold mt-1");
@@ -26,7 +23,7 @@ const contactFormSchema = z.object({
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
-export function ContactFormNew() {
+export function ContactForm() {
     const [status, setStatus] = useState<
         "idle" | "submitting" | "success" | "error"
     >("idle");

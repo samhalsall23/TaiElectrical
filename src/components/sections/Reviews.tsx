@@ -2,10 +2,9 @@
 
 import { ReactGoogleReviews } from "react-google-reviews";
 import "react-google-reviews/dist/index.css";
-import { InViewSection } from "./InViewSection";
-import { SlashHeader } from "./SlashHeader";
+import { InViewSection, SlashHeader } from "@/components/shared";
 
-export function ReviewsNew() {
+export function Reviews() {
     return (
         <section className="bg-gray-50 py-12 lg:py-16">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">

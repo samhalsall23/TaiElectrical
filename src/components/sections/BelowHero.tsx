@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import { InViewSection } from "./InViewSection";
-import { Button } from "./ui/button";
+import { InViewSection } from "@/components/shared";
+import { Button } from "@/components/ui";
 import { AiOutlineContacts } from "react-icons/ai";
 import { LuMapPinned } from "react-icons/lu";
 import {

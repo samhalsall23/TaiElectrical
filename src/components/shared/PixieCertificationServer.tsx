@@ -1,6 +1,6 @@
-// Server-side component for SEO-friendly rendering
-import { PixieCertificationClient } from "./PixieCertification";
 import { LuArrowUpRight } from "react-icons/lu";
+
+import { PixieCertificationClient } from "./PixieCertification";
 
 interface PixieCertificationProps {
     certificateImageSrc: string;

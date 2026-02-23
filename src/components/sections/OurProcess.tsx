@@ -1,27 +1,7 @@
 import Image from "next/image";
-import { SlashHeader } from "./SlashHeader";
-import { InViewSection } from "./InViewSection";
 
-const processSteps = [
-    {
-        stepNumber: 1,
-        title: "Initial Consultation",
-        description:
-            "We start by understanding your needs and assessing the project requirements.",
-    },
-    {
-        stepNumber: 2,
-        title: "Planning & Design",
-        description:
-            "Our team creates a tailored plan and design to meet your specific needs and budget.",
-    },
-    {
-        stepNumber: 3,
-        title: "Execution & Support",
-        description:
-            "We implement the plan with precision and provide ongoing support to ensure satisfaction.",
-    },
-];
+import { PROCESS_STEPS } from "@/lib/constants";
+import { SlashHeader, InViewSection } from "@/components/shared";
 
 function ProcessStep({
     stepNumber,
@@ -59,7 +39,7 @@ function ProcessStep({
     );
 }
 
-export function OurProcessTest() {
+export function OurProcess() {
     return (
         <section className="py-12">
             <div className="container mx-auto px-6">
@@ -92,7 +72,7 @@ export function OurProcessTest() {
                         </InViewSection>
 
                         <div className="space-y-2">
-                            {processSteps.map((step, index) => (
+                            {PROCESS_STEPS.map((step, index) => (
                                 <InViewSection
                                     key={step.stepNumber}
                                     className={`delay-[${index * 150}ms]`}>
@@ -101,7 +81,7 @@ export function OurProcessTest() {
                                         title={step.title}
                                         description={step.description}
                                         isLast={
-                                            index === processSteps.length - 1
+                                            index === PROCESS_STEPS.length - 1
                                         }
                                     />
                                 </InViewSection>

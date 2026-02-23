@@ -1,9 +1,7 @@
 import Image from "next/image";
 
-import { SlashHeader } from "./SlashHeader";
-import IconSquare from "./icons/IconSquare";
-import { InViewSection } from "./InViewSection";
-import { PixieCertification } from "./PixieCertificationServer";
+import { SlashHeader, InViewSection, PixieCertification } from "@/components/shared";
+import { IconSquare } from "@/components/icons";
 
 export function AboutUsDotPoint({
     text,
@@ -20,7 +18,7 @@ export function AboutUsDotPoint({
     );
 }
 
-export function AboutUsNew() {
+export function AboutUs() {
     return (
         <section id="about" className="py-16">
             <div className="container mx-auto px-6">

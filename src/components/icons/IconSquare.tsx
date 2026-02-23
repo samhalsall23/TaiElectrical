@@ -29,7 +29,7 @@ interface IconSquareProps {
     size?: "md" | "lg";
 }
 
-const IconSquare: FC<IconSquareProps> = ({
+export const IconSquare: FC<IconSquareProps> = ({
     icon = "light-bulb",
     size = "lg",
 }) => {
@@ -68,4 +68,4 @@ const IconSquare: FC<IconSquareProps> = ({
     );
 };
 
-export default IconSquare;
+

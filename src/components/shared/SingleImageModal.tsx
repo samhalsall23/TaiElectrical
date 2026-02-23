@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+
 import { X } from "lucide-react";
 
 interface SingleImageModalProps {
