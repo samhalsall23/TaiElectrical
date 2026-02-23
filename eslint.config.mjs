@@ -1,0 +1,14 @@
+import nextConfig from "eslint-config-next";
+
+const eslintConfig = [
+    ...nextConfig,
+    {
+        files: ["src/components/ui/**/*"],
+        rules: {
+            "no-unused-vars": "off",
+            "@typescript-eslint/no-unused-vars": "off",
+        },
+    },
+];
+
+export default eslintConfig;

@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+@plugin "tailwindcss-animate";
 
 :root {
     /* Primary Colors */
@@ -89,6 +89,10 @@
 
 h6 {
     @apply text-gray-900;
+}
+
+button {
+    cursor: pointer;
 }
 
 /* Custom classes */

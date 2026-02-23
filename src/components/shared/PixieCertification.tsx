@@ -3,7 +3,12 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import { AlertDialog, AlertDialogContent, Button } from "@/components/ui";
+import {
+    AlertDialog,
+    AlertDialogContent,
+    AlertDialogTitle,
+    Button,
+} from "@/components/ui";
 
 interface PixieCertificationClientProps {
     certificateImageSrc: string;
@@ -35,6 +40,9 @@ export function PixieCertificationClient({
 
             <AlertDialog open={modalOpen} onOpenChange={setModalOpen}>
                 <AlertDialogContent className="bg-white border-none rounded-lg max-w-4xl w-[90vw] max-h-[90vh]">
+                    <AlertDialogTitle className="sr-only">
+                        Pixie Certified Smart Installer Certificate
+                    </AlertDialogTitle>
                     <div className="relative w-full h-[60vh] flex items-center justify-center">
                         <Image
                             src={certificateImageSrc}

@@ -24,6 +24,7 @@ export function SingleImageModal({
     // === EFFECTS ===
     useEffect(() => {
         if (isOpen && imageSrc) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
             setImageLoading(true);
         }
     }, [isOpen, imageSrc]);
