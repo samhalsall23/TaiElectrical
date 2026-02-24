@@ -5,21 +5,21 @@ Live at **https://taielectrical.com.au**
 
 ---
 
-## Features
+## ✨ Features
 
--   **Google Reviews integration** — live customer reviews rendered as an auto-scrolling carousel
--   **Contact / quote form** — validated, secure submission workflow
--   **Services section** — emergency callouts, general electrical, lighting, data cabling, installations, renovations
--   **Our Process section** — three-step visual timeline
--   **About Us** — company background and certification modal
--   **Projects gallery** — image gallery with full-screen modal
--   **Scroll-triggered animations** throughout the page
--   **Loading overlay** on initial load
--   **Fully responsive** mobile-first layout
+-   ⭐ **Google Reviews integration** - live customer reviews rendered as an auto-scrolling carousel
+-   📩 **Contact / quote form** - validated, secure submission workflow
+-   🪛 **Services section** - emergency callouts, general electrical, lighting, data cabling, installations, renovations
+-   🧭 **Our Process section** - three-step visual timeline
+-   👷 **About Us** - company background and certification modal
+-   🖼️ **Projects gallery** - image gallery with full-screen modal
+-   🎬 **Scroll-triggered animations** - throughout the page
+-   ⏳ **Loading overlay** - on initial load
+-   📱 **Fully responsive** - mobile-first layout
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
 | Area       | Choice                  | Notes                                 |
 | ---------- | ----------------------- | ------------------------------------- |
@@ -34,7 +34,7 @@ Live at **https://taielectrical.com.au**
 
 ---
 
-## Key Implementations
+## ⚙️ Key Implementations
 
 ### Contact Form
 
@@ -79,7 +79,7 @@ To change displayed reviews or styling, update widget settings in Featurable —
 
 ---
 
-## Development
+## 💻 Development
 
 Install and run locally:
 
@@ -100,7 +100,7 @@ EMAIL_TO=
 
 ---
 
-## Deployment
+## 🚀 Deployment
 
 The site is deployed on **Vercel**.
 
@@ -110,7 +110,7 @@ The site is deployed on **Vercel**.
 
 ---
 
-## Future Improvements
+## 🔮 Future Improvements
 
 -   Replace placeholder stock imagery with branded project photography
 -   Add Instagram feed integration to showcase recent work
