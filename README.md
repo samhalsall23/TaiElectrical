@@ -23,7 +23,7 @@ Live at **https://taielectrical.com.au**
 
 | Area       | Choice                  | Notes                                 |
 | ---------- | ----------------------- | ------------------------------------- |
-| Framework  | Next.js 14 (App Router) | Server Actions used for form handling |
+| Framework  | Next.js 16 (App Router) | Server Actions used for form handling |
 | Language   | TypeScript              |                                       |
 | Styling    | Tailwind CSS            | tailwind-merge + tailwindcss-animate  |
 | Animations | Framer Motion           | Scroll-triggered `InViewSection`      |
